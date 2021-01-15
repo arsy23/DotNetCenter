@@ -8,6 +8,9 @@ on:
 jobs:
   build:
     runs-on: windows-latest
+    strategy:
+      matrix:
+        dotnet-versions: ['5.x', '3.x', '4.7.2']
 
     steps:
     - uses: actions/checkout@v2 #Checkout v2 by default fetches just a shallow clone of the repository (latest changes).
@@ -16,7 +19,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.x
+        dotnet-version: ${{ matrix.dotnet-versions }}
     - name: Build with dotnet
       run: dotnet build --configuration Release # Project needs to build before training a model.
     - name: Train Intellicode Model
