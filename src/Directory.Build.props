@@ -7,6 +7,6 @@
 	  <XunitPackageVersion>2.4.1</XunitPackageVersion>
 	  <XunitRunnerVisualStudioPackageVersion>2.4.3</XunitRunnerVisualStudioPackageVersion>
       <MicrosoftNETTestSdkPackageVersion>16.8.3</MicrosoftNETTestSdkPackageVersion>
-      <CoverletCollectorPackageVersion>3.0.0</CoverletCollectorPackageVersion>
+      <CoverletCollectorPackageVersion>3.0.1</CoverletCollectorPackageVersion>
   </PropertyGroup>
 </Project>
