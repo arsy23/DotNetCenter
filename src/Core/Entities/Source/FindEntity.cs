@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Linq.Expressions;
+    using DotNetCenter.Core;
     public static class FindEntity
     {
         public static IQueryable<TEntity> WhereIdEquals<TEntity, TKey>(
