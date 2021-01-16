@@ -1,0 +1,12 @@
+<Project>
+  <PropertyGroup>
+	  <MicrosoftSourceLinkGitHubPackageVersion>1.0.0</MicrosoftSourceLinkGitHubPackageVersion>
+	  <MicrosoftNetCompilersToolsetPackageVersion>3.9.0-2.final</MicrosoftNetCompilersToolsetPackageVersion>
+	  <MicrosoftCodeQualityAnalyzersPackageVersion>5.0.3</MicrosoftCodeQualityAnalyzersPackageVersion>
+	  <MicrosoftCodeAnalysisNetAnalyzersPackageVersion>3.3.2</MicrosoftCodeAnalysisNetAnalyzersPackageVersion>
+	  <XunitPackageVersion>2.4.1</XunitPackageVersion>
+	  <XunitRunnerVisualStudioPackageVersion>2.4.3</XunitRunnerVisualStudioPackageVersion>
+      <MicrosoftNETTestSdkPackageVersion>16.8.3</MicrosoftNETTestSdkPackageVersion>
+      <CoverletCollectorPackageVersion>3.0.0</CoverletCollectorPackageVersion>
+  </PropertyGroup>
+</Project>

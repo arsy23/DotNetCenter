@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Source", "Source", "{CA8B3277-296B-4296-B945-E915EBC404A6}"
+	ProjectSection(SolutionItems) = preProject
+		src\Directory.Build.props = src\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{CEC6CD41-318F-468F-9555-B91557E50115}"
 EndProject
@@ -31,19 +34,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCenter.Core.Exception
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Entities", "Entities", "{9DE06FC6-35D6-4875-BFD8-A99269CB1E58}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCenter.Core.Entities", "src\Core\Entities\Source\DotNetCenter.Core.Entities.csproj", "{25F648B9-C2DE-4014-A708-42EFB5F615B5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCenter.Core.Entities", "src\Core\Entities\Source\DotNetCenter.Core.Entities.csproj", "{25F648B9-C2DE-4014-A708-42EFB5F615B5}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{6EC9BF1C-B069-4CBD-8C2E-25FDC5B27BC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCenter.Core.Entities.UnitTest", "src\Core\Entities\Tests\UnitTest\Source\DotNetCenter.Core.Entities.UnitTest.csproj", "{50BD897B-E8BD-4E07-84F7-371F326EEB19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCenter.Core.Entities.UnitTest", "src\Core\Entities\Tests\UnitTest\Source\DotNetCenter.Core.Entities.UnitTest.csproj", "{50BD897B-E8BD-4E07-84F7-371F326EEB19}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Linq", "Linq", "{6BBDA24F-3CD8-4B3F-AEDA-67650DA1F852}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCenter.Core.Linq", "src\Core\Linq\Source\DotNetCenter.Core.Linq.csproj", "{FB0F1284-F5F8-40A5-9154-E4A16F571347}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCenter.Core.Linq", "src\Core\Linq\Source\DotNetCenter.Core.Linq.csproj", "{FB0F1284-F5F8-40A5-9154-E4A16F571347}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8FAF7DCA-C819-4ECF-94EE-D73D5BF76DBD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetCenter.Core.Linq.UnitTest", "src\Core\Linq\Tests\UnitTest\Source\DotNetCenter.Core.Linq.UnitTest.csproj", "{06B9A6FE-E805-43DA-9FCF-87FA922838C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetCenter.Core.Linq.UnitTest", "src\Core\Linq\Tests\UnitTest\Source\DotNetCenter.Core.Linq.UnitTest.csproj", "{06B9A6FE-E805-43DA-9FCF-87FA922838C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
