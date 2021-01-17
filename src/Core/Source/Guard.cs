@@ -11,7 +11,7 @@
         public static void ForNullOrEmpty(string value, string paramName)
         {
             if (string.IsNullOrEmpty(value))
-                throw new ArgumentOutOfRangeException(paramName);
+                throw new ArgumentNullException(paramName);
         }
         public static void ForNullReference(object @object, string paramName = "")
         {
