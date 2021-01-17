@@ -6,7 +6,7 @@ namespace DotNetCenter.Core
 {
     public enum ValueComesFrom
     {
-        Configurations = 1,
-        Arguments = 2
+        Configurations = 0,
+        Arguments = 1
     }
 }
