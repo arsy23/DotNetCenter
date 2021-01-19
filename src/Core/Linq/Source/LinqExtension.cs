@@ -23,20 +23,30 @@
                 action(item);
             return enumeration;
         }
-        public static string ForEachConcate(this IEnumerable<string> enumeration, Func<string,string> action)
+        /// <summary>
+        /// Customize strings concatination with execute an action foreach concatination 
+        /// </summary>
+        /// <param name="enumeration">The string collection you need to concat to each others</param>
+        /// <param name="action">The Action you need to excute before each concationation and try to custom conatination. Each strings passed to action as parameter to the action</param>
+        /// <returns>Concated string</returns>
+        public static string CustomConcatination(
+            this IEnumerable<string> enumeration,
+            Func<string,string> action)
         {
-            var stringBuilder = new StringBuilder();
+            var @stringBuilder = new StringBuilder();
             foreach (var @string in enumeration)
             {
+                if (string.IsNullOrEmpty(@string))
+                    continue;
+
                 var result = action.Invoke(@string);
-                if (string.IsNullOrEmpty(@string)
-                    || string.IsNullOrWhiteSpace(@string)
-                    || string.IsNullOrEmpty(result)
-                    || string.IsNullOrWhiteSpace(result))
-                    break;
-                stringBuilder.Append($"/{result}");
+                
+                if (string.IsNullOrEmpty(result))
+                    continue;
+
+                @stringBuilder.Append(result);
             }
-            return stringBuilder.ToString();
+            return @stringBuilder.ToString();
         }
     }
 }
