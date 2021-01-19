@@ -87,7 +87,7 @@
             .Append(string5)
             .Append(extraSpace);
 
-            //actualString 'with' extra space
+            //expected 'with' extra space
             var expected = @stringsBuilder.ToString();
 
             Assert.Equal(
