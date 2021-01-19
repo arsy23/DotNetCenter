@@ -28,12 +28,15 @@
             var stringBuilder = new StringBuilder();
             foreach (var @string in enumeration)
             {
-                var result = action.Invoke(@string);
                 if (string.IsNullOrEmpty(@string)
-                    || string.IsNullOrWhiteSpace(@string)
                     || string.IsNullOrEmpty(result)
                     || string.IsNullOrWhiteSpace(result))
-                    break;
+                    continue;
+                var result = action.Invoke(@string);
+                
+                if (result == null)
+                    continue;
+                
                 stringBuilder.Append($"/{result}");
             }
             return stringBuilder.ToString();
