@@ -11,8 +11,10 @@
         public LinqExtensionTests()
         { }
 
+        static char extraSpace = ' ';
+
         [Fact]
-        public void ConcatinatedStringsMustEqualToExpectedStringWithoutExtraSpaceAtEnd()
+        public void ConcatinatedStringsMustEqualToActualStringWithoutExtraSpaceAtEnd()
         {
             var string1 = "This";
             var string2 = "Successful";
@@ -23,10 +25,11 @@
                 string1, string2, string3, string4, string5
             };
 
-            var concatinatedStrings = @strings
-                .CustomConcatination(new Func<string, string>((@string) => {
-                    var st = @string + ' ';
-                    return st;  
+            var actualString = @strings
+                .CustomConcatination(new Func<string, string>((inputString) =>
+                {
+                    inputString = AddExtraSpaceAtEnd(inputString);
+                    return inputString;
                 }));
 
             var @stringsBuilder = new StringBuilder();
@@ -40,16 +43,21 @@
             @stringsBuilder.Append(' ');
             @stringsBuilder.Append(string5);
 
+            //expected 'without' extra space
+            var expected = RemoveExtraSpaceAtEnd(stringsBuilder);
+
             Assert.NotEqual(
-                concatinatedStrings, 
-                @stringsBuilder.ToString().TrimEnd());
+                expected,
+                actualString
+                );
+
+            static string RemoveExtraSpaceAtEnd(StringBuilder stringsBuilder)
+                => @stringsBuilder.ToString().TrimEnd();
         }
 
         [Fact]
-        public void ConcatinatedStringsMustNotEqualToStringWithExtraSpaceAtEnd()
+        public void ConcatinatedStringsMustEqualToActualStringWithEndExtraSpaceAtEnd()
         {
-            var extraSpace = ' ';
-
             var string1 = "This";
             var string2 = "Successful";
             var string3 = "Concaination";
@@ -59,10 +67,11 @@
                 string1, string2, string3, string4, string5
             };
 
-            var concatinatedStrings = @strings
-                .CustomConcatination(new Func<string, string>((@string) => {
-                    @string += extraSpace;
-                    return @string;
+            var actualString = strings
+                .CustomConcatination(new Func<string, string>((inputString) =>
+                {
+                    inputString = AddExtraSpaceAtEnd(inputString);
+                    return inputString;
                 }));
 
             var @stringsBuilder = new StringBuilder();
@@ -78,8 +87,18 @@
             .Append(string5)
             .Append(extraSpace);
 
-            Assert.Equal(concatinatedStrings,
-                @stringsBuilder.ToString());
+            //actualString 'with' extra space
+            var expected = @stringsBuilder.ToString();
+
+            Assert.Equal(
+                expected,
+                actualString);
+
+
+        }
+        private static string AddExtraSpaceAtEnd(string stringInput)
+        {
+            return stringInput + extraSpace;
         }
     }
 }
