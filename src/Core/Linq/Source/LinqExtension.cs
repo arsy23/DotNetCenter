@@ -24,14 +24,16 @@
             return enumeration;
         }
         /// <summary>
-        /// Concate strings and execute action foreach concatination
+        /// Customize strings concatination with execute an action foreach concatination 
         /// </summary>
         /// <param name="enumeration">The string collection you need to concat to each others</param>
-        /// <param name="action">The Action you need to excute before each concationation. Each strings passed to action as parameter to the action</param>
+        /// <param name="action">The Action you need to excute before each concationation and try to custom conatination. Each strings passed to action as parameter to the action</param>
         /// <returns>Concated string</returns>
-        public static string ForEachConcat(this IEnumerable<string> enumeration, Func<string,string> action)
+        public static string CustomConcatination(
+            this IEnumerable<string> enumeration,
+            Func<string,string> action)
         {
-            var stringBuilder = new StringBuilder();
+            var @stringBuilder = new StringBuilder();
             foreach (var @string in enumeration)
             {
                 if (string.IsNullOrEmpty(@string))
@@ -39,12 +41,12 @@
 
                 var result = action.Invoke(@string);
                 
-                if (result == null)
+                if (string.IsNullOrEmpty(result))
                     continue;
-                
-                stringBuilder.Append($"/{result}");
+
+                @stringBuilder.Append(result);
             }
-            return stringBuilder.ToString();
+            return @stringBuilder.ToString();
         }
     }
 }
