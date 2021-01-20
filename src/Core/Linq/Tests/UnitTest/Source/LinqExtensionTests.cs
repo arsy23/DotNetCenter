@@ -14,11 +14,11 @@
         static char extraSpace = ' ';
 
         [Fact]
-        public void ConcatinatedStringsMustEqualToActualStringWithoutExtraSpaceAtEnd()
+        public void ConcatenatedStringsMustEqualToActualStringWithoutExtraSpaceAtEnd()
         {
-            var string1 = "This";
+            var string1 = " ";
             var string2 = "Successful";
-            var string3 = "Concaination";
+            var string3 = "Concatenation";
             var string4 = "Strings";
             var string5 = "!";
             var @strings = new string[5] {
@@ -26,7 +26,7 @@
             };
 
             var actualString = @strings
-                .CustomConcatination(new Func<string, string>((inputString) =>
+                .CustomConcatenation(new Func<string, string>((inputString) =>
                 {
                     inputString = AddExtraSpaceAtEnd(inputString);
                     return inputString;
@@ -56,11 +56,11 @@
         }
 
         [Fact]
-        public void ConcatinatedStringsMustEqualToActualStringWithEndExtraSpaceAtEnd()
+        public void ConcatenatedStringsMustEqualToActualStringWithEndExtraSpaceAtEnd()
         {
-            var string1 = "This";
+            var string1 = " ";
             var string2 = "Successful";
-            var string3 = "Concaination";
+            var string3 = "Concatenation";
             var string4 = "Strings";
             var string5 = "!";
             var @strings = new string[5] {
@@ -68,7 +68,7 @@
             };
 
             var actualString = strings
-                .CustomConcatination(new Func<string, string>((inputString) =>
+                .CustomConcatenation(new Func<string, string>((inputString) =>
                 {
                     inputString = AddExtraSpaceAtEnd(inputString);
                     return inputString;
@@ -93,8 +93,6 @@
             Assert.Equal(
                 expected,
                 actualString);
-
-
         }
         private static string AddExtraSpaceAtEnd(string stringInput)
         {
