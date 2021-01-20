@@ -1,8 +1,10 @@
-﻿namespace DotNetCenter.Core.Linq.UnitTest
+namespace DotNetCenter.Core.Linq.UnitTest
 {
     using System;
     using System.Linq;
     using System.Text;
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
     using Xunit;
     public class LinqExtensionTests
     {

@@ -1,4 +1,4 @@
-﻿namespace DotNetCenter.Core.Linq
+namespace DotNetCenter.Core.Linq
 {
     using System;
     using System.Collections.Generic;
@@ -23,7 +23,6 @@
                 action(item);
             return enumeration;
         }
-
         /// <summary>
         /// Make string concatenation
         /// </summary>
