@@ -1,10 +1,8 @@
 ﻿namespace DotNetCenter.Core.Linq.UnitTest
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
     using Xunit;
     public class LinqExtensionTests
     {
@@ -13,90 +11,63 @@
 
         static char extraSpace = ' ';
 
-        [Fact]
-        public void ConcatenatedStringsMustEqualToActualStringWithoutExtraSpaceAtEnd()
-        {
-            var string1 = " ";
-            var string2 = "Successful";
-            var string3 = "Concatenation";
-            var string4 = "Strings";
-            var string5 = "!";
-            var @strings = new string[5] {
-                string1, string2, string3, string4, string5
-            };
+        #region Concat
+        #region String
+        string string1 = " ";
+        string string2 = "Successful";
+        string string3 = "Concatenation";
+        string string4 = "Strings";
+        string string5 = "!";
 
-            var actualString = @strings
-                .CustomConcatenation(new Func<string, string>((inputString) =>
+        #region ConcatenatedStringsMustEqualToActualString
+        [Fact]
+        public void ConcatenatedStringsMustEqualToActualString()
+        {
+            var @strings = GetStrings();
+
+            var actualString = @strings.Concat();
+
+            var expected = GetTestCaseConcatenatedString();
+
+            Assert.NotEqual(expected, actualString);
+        }
+        #endregion
+
+        #region CustomConcatenatedStringsMustEqualToActualString
+        [Fact]
+        public void CustomConcatenatedStringsMustEqualToActualString()
+        {
+            var @strings = GetStrings();
+
+            var actualString = @strings.Concat(new Func<string, string>((inputString) =>
                 {
-                    inputString = AddExtraSpaceAtEnd(inputString);
-                    return inputString;
+                    return AddExtraSpaceAtEnd(inputString);
                 }));
 
-            var @stringsBuilder = new StringBuilder();
-            @stringsBuilder.Append(string1);
-            @stringsBuilder.Append(' ');
-            @stringsBuilder.Append(string2);
-            @stringsBuilder.Append(' ');
-            @stringsBuilder.Append(string3);
-            @stringsBuilder.Append(' ');
-            @stringsBuilder.Append(string4);
-            @stringsBuilder.Append(' ');
-            @stringsBuilder.Append(string5);
+            var expected = GetTestCaseConcatenatedString();
 
-            //expected 'without' extra space
-            var expected = RemoveExtraSpaceAtEnd(stringsBuilder);
-
-            Assert.NotEqual(
-                expected,
-                actualString
-                );
-
-            static string RemoveExtraSpaceAtEnd(StringBuilder stringsBuilder)
-                => @stringsBuilder.ToString().TrimEnd();
+            Assert.NotEqual( expected, actualString );
         }
 
-        [Fact]
-        public void ConcatenatedStringsMustEqualToActualStringWithEndExtraSpaceAtEnd()
-        {
-            var string1 = " ";
-            var string2 = "Successful";
-            var string3 = "Concatenation";
-            var string4 = "Strings";
-            var string5 = "!";
-            var @strings = new string[5] {
-                string1, string2, string3, string4, string5
-            };
-
-            var actualString = strings
-                .CustomConcatenation(new Func<string, string>((inputString) =>
-                {
-                    inputString = AddExtraSpaceAtEnd(inputString);
-                    return inputString;
-                }));
-
-            var @stringsBuilder = new StringBuilder();
-            @stringsBuilder
+        private object GetTestCaseConcatenatedString() => new StringBuilder()
             .Append(string1)
-            .Append(extraSpace)
+            .Append(' ')
             .Append(string2)
-            .Append(extraSpace)
+            .Append(' ')
             .Append(string3)
-            .Append(extraSpace)
+            .Append(' ')
             .Append(string4)
-            .Append(extraSpace)
+            .Append(' ')
             .Append(string5)
-            .Append(extraSpace);
+            .ToString();
+        #endregion
 
-            //expected 'with' extra space
-            var expected = @stringsBuilder.ToString();
+        private string[] GetStrings() => new string[5] {
+                string1, string2, string3, string4, string5
+        };
+        #endregion
+        #endregion
 
-            Assert.Equal(
-                expected,
-                actualString);
-        }
-        private static string AddExtraSpaceAtEnd(string stringInput)
-        {
-            return stringInput + extraSpace;
-        }
+        private string AddExtraSpaceAtEnd(string stringInput) => stringInput + extraSpace;
     }
 }

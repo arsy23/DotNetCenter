@@ -23,13 +23,31 @@
                 action(item);
             return enumeration;
         }
+
+        /// <summary>
+        /// Make string concatenation
+        /// </summary>
+        /// <param name="enumeration">The string collection you need to concat</param>
+        /// <returns>Concatenation result</returns>
+        public static string Concat(this IEnumerable<string> enumeration)
+        {
+            var @stringBuilder = new StringBuilder();
+            foreach (var @string in enumeration)
+            {
+                if (string.IsNullOrEmpty(@string))
+                    continue;
+
+                @stringBuilder.Append(@string);
+            }
+            return @stringBuilder.ToString();
+        }
         /// <summary>
         /// Make string concatenation and take control on each string before concatenation 
         /// </summary>
         /// <param name="enumeration">The string collection you need to concat</param>
         /// <param name="action">The Action excute before each concatenation for custom concatenation. Each strings passed as parameter to the action</param>
         /// <returns>Concatenation result </returns>
-        public static string CustomConcatenation(this IEnumerable<string> enumeration, Func<string,string> action)
+        public static string Concat(this IEnumerable<string> enumeration, Func<string,string> action)
         {
             var @stringBuilder = new StringBuilder();
             foreach (var @string in enumeration)
