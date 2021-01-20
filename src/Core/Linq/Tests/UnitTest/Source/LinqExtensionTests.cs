@@ -50,20 +50,18 @@ namespace DotNetCenter.Core.Linq.UnitTest
 
             Assert.NotEqual( expected, actualString );
         }
-
+        #endregion
         private object GetTestCaseConcatenatedString() => new StringBuilder()
             .Append(string1)
-            .Append(' ')
+            .Append(extraSpace)
             .Append(string2)
-            .Append(' ')
+            .Append(extraSpace)
             .Append(string3)
-            .Append(' ')
+            .Append(extraSpace)
             .Append(string4)
-            .Append(' ')
+            .Append(extraSpace)
             .Append(string5)
             .ToString();
-        #endregion
-
         private string[] GetStrings() => new string[5] {
                 string1, string2, string3, string4, string5
         };
