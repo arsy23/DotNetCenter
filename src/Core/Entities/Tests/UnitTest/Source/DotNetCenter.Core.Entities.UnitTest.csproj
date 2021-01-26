@@ -3,6 +3,11 @@
   <PropertyGroup>
     <TargetFrameworks>$(UnitTestProjectTargetFrameworkNames);</TargetFrameworks>
     <IsPackable>false</IsPackable>
+	<Version>$(ClasslibraryVersion)</Version>
+	<AssemblyVersion>$(AssemblyVersion)</AssemblyVersion>
+	<FileVersion>$(FileVersion)</FileVersion>
+	<LangVersion>$(LangVersion)</LangVersion>
+    <Nullable>$(EnableNullable)</Nullable>
   </PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
