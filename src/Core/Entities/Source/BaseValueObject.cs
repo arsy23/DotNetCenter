@@ -10,7 +10,7 @@
     /// <typeparam name="TValueObject">Type of the Value-Object itself as parameter</typeparam>
     public abstract class BaseValueObject<TValueObject> where TValueObject : BaseValueObject<TValueObject>
     {
-        #region GetEqualityComponents;
+        #region GetEqualityComponents
         /// <summary>
         /// Get Equality Components
         /// </summary>
@@ -52,6 +52,7 @@
          => GetHashCodeCore();
         #endregion
         #region Operators
+        #region ==
         /// <summary>
         /// Equality Opreator
         /// </summary>
@@ -63,6 +64,8 @@
             ? true : firstObj is null
             || secondObj is null
             ? false : firstObj.Equals(secondObj);
+        #endregion
+        #region !=
         /// <summary>
         /// Not Equality Oprator
         /// </summary>
@@ -72,6 +75,6 @@
         public static bool operator !=(BaseValueObject<TValueObject> firstObject, BaseValueObject<TValueObject> secondObj)
             => !(firstObject == secondObj);
         #endregion
-
+        #endregion
     }
 }
