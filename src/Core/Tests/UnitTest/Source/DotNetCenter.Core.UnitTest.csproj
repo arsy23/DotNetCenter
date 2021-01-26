@@ -7,6 +7,7 @@
 	  <AssemblyVersion>$(AssemblyVersion)</AssemblyVersion>
 	  <FileVersion>$(FileVersion)</FileVersion>
 	  <LangVersion>$(LangVersion)</LangVersion>
+	  <Nullable>$(EnableNullable)</Nullable>
   </PropertyGroup>
 	
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
