@@ -1,7 +1,6 @@
-﻿using System.Collections.Generic;
-
-namespace DotNetCenter.Core.Entities.UnitTest
+﻿namespace DotNetCenter.Core.Entities.UnitTest
 {
+    using System.Collections.Generic;
     public class MoneyValueObject : BaseValueObject<MoneyValueObject>
     {
         public MoneyValueObject(long amount) 
