@@ -2,7 +2,7 @@
 {
     using System;
     /// <summary>
-    /// Base class for Auditable Entities
+    /// Base class for Auditable Entity
     /// </summary>
     /// <typeparam name="TEntity">Type of the Entity itself as parameter</typeparam>
     /// <typeparam name="TKey">The Entity key type</typeparam>
@@ -23,38 +23,32 @@
             Id = id;
             CreatedBy = creatorId;
         }
-        /// <summary>
-        /// Default constructor with the Entity Identity (ID) initialization
-        /// </summary>
-        /// <param name="id">The Entity id</param>
-        public BaseAuditableEntity(TKey id)
-            => Id = id;
         #endregion
         #region Properties
         /// <summary>
-        /// Entity identity (ID)
+        /// The Entity identity (ID)
         /// </summary>
         public TKey Id { get; private set; }
         /// <summary>
-        /// Entity Creator identity (ID)
+        /// The Creator Identity (ID)
         /// </summary>
         public TKeyCreator CreatedBy { get; set; }
         /// <summary>
-        /// Entity Created Utc DateTime
-        /// </summary>
+        /// The UTC-DateTime that Entity it was Created
+        /// /// </summary>
         public DateTime CreatedUtc { get; set; }
         /// <summary>
-        /// Entity Last Modifier identity (ID)
+        /// The UTC-DateTime that Entity it was Created
         /// </summary>
         public TKeyCreator LastModifiedBy { get; set; }
         /// <summary>
-        /// Entity Last Modified Utc DateTime
+        /// The LastModified-DateTime by The Entity
         /// </summary>
         public DateTime? LastModifiedUtc { get; set; }
         #endregion
         #region Fields
         /// <summary>
-        /// The Entity identity (ID) property name
+        /// The Name of Identity (ID) Property
         /// </summary>
         public const string ID = nameof(Id);
         #endregion
