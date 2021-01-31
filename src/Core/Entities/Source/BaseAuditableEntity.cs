@@ -2,7 +2,7 @@
 {
     using System;
     /// <summary>
-    /// Base class for Auditable Entities
+    /// Base class for Auditable Entity
     /// </summary>
     /// <typeparam name="TEntity">Type of the Entity itself as parameter</typeparam>
     /// <typeparam name="TKey">The Entity key type</typeparam>
@@ -20,43 +20,49 @@
         /// <param name="creatorId">The Entity creator identity (ID)</param>
         public BaseAuditableEntity(TKey id, TKeyCreator creatorId)
         {
-            Id = id;
-            CreatedBy = creatorId;
+            _id = id;
+            _creatorId = creatorId;
         }
-        /// <summary>
-        /// Default constructor with the Entity Identity (ID) initialization
-        /// </summary>
-        /// <param name="id">The Entity id</param>
-        public BaseAuditableEntity(TKey id)
-            => Id = id;
         #endregion
         #region Properties
         /// <summary>
-        /// Entity identity (ID)
+        /// Entity Identity (ID)
         /// </summary>
-        public TKey Id { get; private set; }
+        public TKey Id => _id;
+        private readonly TKey _id;
+
         /// <summary>
-        /// Entity Creator identity (ID)
+        /// The UTC-DateTime that Entity it was Created
         /// </summary>
-        public TKeyCreator CreatedBy { get; set; }
+        public TKeyCreator CreatedBy => _creatorId;
+        private readonly TKeyCreator _creatorId;
+
         /// <summary>
-        /// Entity Created Utc DateTime
-        /// </summary>
-        public DateTime CreatedUtc { get; set; }
+        /// Initial UTC Date-Time that Entity it was Created
+        ///</summary>
+        public DateTime CreatedUtc => _createdUtc;
+        private readonly DateTime _createdUtc;
+
         /// <summary>
         /// Entity Last Modifier identity (ID)
         /// </summary>
-        public TKeyCreator LastModifiedBy { get; set; }
+        public TKeyCreator LastModifiedBy => _lastModifiedBy;
+        private readonly DateTime? _lastModifiedUtc;
+
         /// <summary>
-        /// Entity Last Modified Utc DateTime
+        /// The Last UTC Date-Time that Entity it was modified
         /// </summary>
-        public DateTime? LastModifiedUtc { get; set; }
+        public DateTime? LastModifiedUtc => _lastModifiedUtc;
+        private readonly TKeyCreator _lastModifiedBy;
         #endregion
         #region Fields
         /// <summary>
-        /// The Entity identity (ID) property name
+        /// The Name of Identity (ID) Property
         /// </summary>
         public const string ID = nameof(Id);
+        #endregion
+        #region Methods
+        public abstract void Set
         #endregion
     }
 }

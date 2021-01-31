@@ -5,6 +5,7 @@ namespace DotNetCenter.Core.Entities
     ///  Auditable Entity Interface
     /// </summary>
     /// <typeparam name="TKey">The Entity key type</typeparam>
+    /// <typeparam name="TKeyCreator">The Entity creator key type</typeparam>
     public interface AuditableEntity<TKey, TKeyCreator> 
         where TKey :  IEquatable<TKey>
         where TKeyCreator :  IEquatable<TKeyCreator>
@@ -13,23 +14,27 @@ namespace DotNetCenter.Core.Entities
         /// <summary>
         /// Entity Identity (ID)
         /// </summary>
-        public TKey Id { get;}
+        public TKey Id { get; }
+
         /// <summary>
-        /// Entity Creator Identity (ID)
+        /// The UTC-DateTime that Entity it was Created
         /// </summary>
-        public TKeyCreator CreatedBy { get; set; }
+        public TKeyCreator CreatedBy { get; }
+
         /// <summary>
-        /// Entity Created Utc DateTime
-        /// </summary>
-        public DateTime CreatedUtc { get; set; }
+        /// Initial UTC Date-Time that Entity it was Created
+        ///</summary>
+        public DateTime CreatedUtc { get; }
+
         /// <summary>
         /// Entity Last Modifier identity (ID)
         /// </summary>
-        public TKeyCreator LastModifiedBy { get; set; }
+        public TKeyCreator LastModifiedBy { get; }
+
         /// <summary>
-        /// Entity Last Modified Utc DateTime
+        /// The Last UTC Date-Time that Entity it was modified
         /// </summary>
-        public DateTime? LastModifiedUtc { get; set; }
+        public DateTime? LastModifiedUtc { get; }
         #endregion
     }
 }
