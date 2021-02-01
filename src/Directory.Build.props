@@ -18,5 +18,7 @@
 	  <MicrosoftNETTestSdkPackageVersion>16.8.3</MicrosoftNETTestSdkPackageVersion>
 	  <CoverletCollectorPackageVersion>3.0.1</CoverletCollectorPackageVersion>
 	  <XunitPackageVersion>2.4.1</XunitPackageVersion>
-  </PropertyGroup>
+	  <EnableNullable>enable</EnableNullable>
+  
+</PropertyGroup>
 </Project>
