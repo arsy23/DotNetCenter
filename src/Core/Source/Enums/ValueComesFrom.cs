@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace DotNetCenter.Core
+﻿namespace DotNetCenter.Core
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
     /// <summary>
     /// Determine Orign that value comes from
     /// </summary>
