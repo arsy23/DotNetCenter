@@ -12,7 +12,7 @@
         /// <summary>
         /// The Object is in Constructed state
         /// </summary>
-        Constructed = 1
+        Constructed = 1,
         /// <summary>
         /// The Object is Initialized
         /// </summary>
