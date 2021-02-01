@@ -34,7 +34,7 @@
         private readonly TKey _id;
 
         /// <summary>
-        /// Entity Creator identity (ID)
+        /// The UTC-DateTime that Entity it was Created
         /// </summary>
         public TKeyCreator CreatedBy => _creatorId;
         private readonly TKeyCreator _creatorId;
@@ -44,6 +44,7 @@
         ///</summary>
         public DateTime CreatedDateTime => _createdDateTime;
         private readonly DateTime _createdDateTime;
+
 
         /// <summary>
         /// Entity Last Modifier identity (ID)
