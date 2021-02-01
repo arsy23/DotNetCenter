@@ -6,11 +6,13 @@
     /// </summary>
     /// <typeparam name="TEntity">Type of the Entity itself as parameter</typeparam>
     /// <typeparam name="TKey">The Entity key type</typeparam>
-    /// <typeparam name="TKeyCreator">The Entity creator key type</typeparam>
-    public class BaseAuditableEntity<TEntity, TKey, TKeyCreator> : AuditableEntity<TKey, TKeyCreator>
-        where TEntity : BaseAuditableEntity<TEntity, TKey, TKeyCreator>
+    /// <typeparam name="TKeyCreator">The Entity Creator Key-Type</typeparam>
+    /// <typeparam name="TKeyModifier">The Entity Modifier Key-Type</typeparam>
+    public class BaseAuditableEntity<TEntity, TKey, TKeyCreator, TKeyModifier> : AuditableEntity<TKey, TKeyCreator, TKeyModifier>
+        where TEntity : BaseAuditableEntity<TEntity, TKey, TKeyCreator, TKeyModifier>
         where TKey : struct, IEquatable<TKey>
         where TKeyCreator : struct, IEquatable<TKeyCreator>
+        where TKeyModifier : struct, IEquatable<TKeyCreator>
     {
         #region Constructors
         /// <summary>
@@ -38,22 +40,23 @@
         private readonly TKeyCreator _creatorId;
 
         /// <summary>
-        /// Initial UTC Date-Time that Entity it was Created
+        /// Initial Date-Time that Entity it was Created
         ///</summary>
-        public DateTime CreatedUtc => _createdUtc;
-        private readonly DateTime _createdUtc;
+        public DateTime CreatedDateTime => _createdDateTime;
+        private readonly DateTime _createdDateTime;
+
 
         /// <summary>
         /// Entity Last Modifier identity (ID)
         /// </summary>
-        public TKeyCreator LastModifiedBy => _lastModifiedBy;
-        private readonly DateTime? _lastModifiedUtc;
+        public TKeyModifier LastModifiedBy => _lastModifiedBy;
+        private TKeyModifier _lastModifiedBy;
 
         /// <summary>
-        /// The Last UTC Date-Time that Entity it was modified
+        /// The Last Date-Time that Entity it was modified
         /// </summary>
-        public DateTime? LastModifiedUtc => _lastModifiedUtc;
-        private readonly TKeyCreator _lastModifiedBy;
+        public DateTime? LastModifiedDateTime => _lastModifiedDateTime;
+        private DateTime? _lastModifiedDateTime;
         #endregion
         #region Fields
         /// <summary>
@@ -62,7 +65,11 @@
         public const string ID = nameof(Id);
         #endregion
         #region Methods
-        public abstract void Set
+        public virtual void Modify(TKeyModifier modifierId, DateTime lastModifiedDate)
+        {
+            _lastModifiedBy = modifierId;
+            _lastModifiedDateTime = lastModifiedDate;
+        }
         #endregion
     }
 }
