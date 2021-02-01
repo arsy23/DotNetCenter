@@ -4,12 +4,12 @@
     using System.Linq;
     using System.Text;
     /// <summary>
-    /// Generates CUID (Custom Unique Identifier (ID))
+    /// Generate CUID's (Custom Unique Identifier (ID))
     /// </summary>
     public static class CuidGenerator
     {
         /// <summary>
-        /// Generate Cuid with default length
+        /// Generate CUID with default length
         /// </summary>
         /// <returns>The Defaults mechanism provide 11 char cuid in string format</returns>
         public static string NewCuid()
@@ -19,8 +19,8 @@
         /// <summary>
         /// Generate Cuid with custom length in string format
         /// </summary>
-        /// <param name="length"></param>
-        /// <returns></returns>
+        /// <param name="length">The Length of CUID</param>
+        /// <returns>Provide CUID in string format with the Length passed as argument</returns>
         public static string NewCuid(byte length)
         {
             var builder = new StringBuilder();
