@@ -1,7 +1,11 @@
 ﻿namespace DotNetCenter.Core
 {
+    /// <summary>
+    /// English Alphabets as enumeration type
+    /// </summary>
     public enum EnglishAlphabes : byte
     {
+
         A = 1,
         B = 2,
         C = 3,
