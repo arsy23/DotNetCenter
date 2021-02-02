@@ -24,7 +24,7 @@
         {
             EEntity @object = null;
             Type expected = GetNullReferenceExceptionType();
-            Assert.Throws(expected, ForNullReferenceGuardObject(@object));
+            Assert.Throws(expected, ForNullReferenceObjectGuard(@object));
         }
 
 
@@ -34,7 +34,7 @@
         public void GuardForNullReferenceMustNotThrowNullReferenceExceptionWhenTheObjectIsNotNull()
         {
             var @object = new EEntity();
-            var exception = Record.Exception(ForNullReferenceGuardObject(@object));
+            var exception = Record.Exception(ForNullReferenceObjectGuard(@object));
             Assert.Null(exception);
         }
 
@@ -43,7 +43,7 @@
         #endregion
         #endregion
 
-        private static Action ForNullReferenceGuardObject(EEntity @object) 
+        private static Action ForNullReferenceObjectGuard(EEntity @object) 
             => new Action(() =>
             {
                 ObjectGuard.ForNullReference(@object, nameof(@object));
