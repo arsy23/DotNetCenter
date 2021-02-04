@@ -8,7 +8,9 @@
     /// </summary>
     /// <typeparam name="TEntity">Type of the Entity itself as parameter</typeparam>
     /// <typeparam name="TKey">The Entity key type</typeparam>
-    public abstract class BaseEntity<TEntity, TKey> : Entity<TKey>
+    public abstract class BaseEntity<TEntity, TKey> 
+        : BaseObject
+        ,Entity<TKey>
         where TEntity : BaseEntity<TEntity, TKey>
         where TKey : struct, IEquatable<TKey>
     {
@@ -34,11 +36,40 @@
         public const string ID = nameof(Id);
         #endregion
         #region Methods
+        #region Operators
+        #region ==
         /// <summary>
-        /// Copy The Value of type Entity<TKey> form this object to target object
+        /// Equality Opreator
+        /// </summary>
+        /// <param name="firstObj"></param>
+        /// <param name="secondObj"></param>
+        /// <returns></returns>
+        public static bool operator ==(BaseEntity<TEntity, TKey>? firstObj, BaseEntity<TEntity, TKey>? secondObj)
+        {
+            if (firstObj is null || secondObj is null)
+                throw new(nameof(secondObj) + nameof(firstObj));
+
+            return firstObj.Equals(secondObj);
+        }
+        #endregion
+        #region !=
+        /// <summary>
+        /// Not Equality Oprator
+        /// </summary>
+        /// <param name="firstObject"></param>
+        /// <param name="secondObj"></param>
+        /// <returns></returns>
+        public static bool operator !=(BaseEntity<TEntity, TKey> firstObject, BaseEntity<TEntity, TKey> secondObj)
+            => !(firstObject == secondObj);
+        #endregion
+        #endregion
+        #region CopyValues
+        /// <summary>
+        /// Copy The Value of type Entity-Key- form this object to target object
         /// </summary>
         /// <param name="target">The Target object recived value from this object presented as reference parameter</param>
-        public ref TEntity CopyValues(ref TEntity target)
+        /// <returns></returns>
+        protected ref TEntity CopyValues(ref TEntity target)
         {
             var properties = GetType()
                 .GetProperties()
@@ -55,6 +86,7 @@
             }
             return ref target;
         }
+        #endregion
         #endregion
     }
 }
