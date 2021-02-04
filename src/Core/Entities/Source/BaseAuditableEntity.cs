@@ -2,13 +2,13 @@
 {
     using System;
     /// <summary>
-    /// Base class for Auditable Entity
+    /// Abstract Base class for Auditable Entity
     /// </summary>
     /// <typeparam name="TEntity">Type of the Entity itself as parameter</typeparam>
     /// <typeparam name="TKey">The Entity key type</typeparam>
     /// <typeparam name="TKeyCreator">The Entity Creator Key-Type</typeparam>
     /// <typeparam name="TKeyModifier">The Entity Modifier Key-Type</typeparam>
-    public class BaseAuditableEntity<TEntity, TKey, TKeyCreator, TKeyModifier> 
+    public abstract class BaseAuditableEntity<TEntity, TKey, TKeyCreator, TKeyModifier> 
         : BaseEntity<TEntity, TKey>,
         AuditableEntity<TKey, TKeyCreator, TKeyModifier>
         where TEntity : BaseEntity<TEntity, TKey>
