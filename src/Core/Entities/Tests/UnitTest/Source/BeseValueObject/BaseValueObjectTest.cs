@@ -6,7 +6,7 @@
     {
         private const int Amount = 23000;
 
-        #region Equals
+        #region Equals with Covering GetEqualityComponents
         #region SameValueObjects*MustBeEquals*WithEqualsMethod
         [Fact]
         public void SameValueObjectsMustBeEqualsWithEqualsMethod()
