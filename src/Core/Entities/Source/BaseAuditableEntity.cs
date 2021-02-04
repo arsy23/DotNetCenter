@@ -34,7 +34,7 @@
         private readonly TKey _id;
 
         /// <summary>
-        /// The UTC-DateTime that Entity it was Created
+        /// The DateTime that Entity it was Created
         /// </summary>
         public TKeyCreator CreatedBy => _creatorId;
         private readonly TKeyCreator _creatorId;
