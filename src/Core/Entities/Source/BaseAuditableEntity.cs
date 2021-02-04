@@ -8,8 +8,10 @@
     /// <typeparam name="TKey">The Entity key type</typeparam>
     /// <typeparam name="TKeyCreator">The Entity Creator Key-Type</typeparam>
     /// <typeparam name="TKeyModifier">The Entity Modifier Key-Type</typeparam>
-    public class BaseAuditableEntity<TEntity, TKey, TKeyCreator, TKeyModifier> : AuditableEntity<TKey, TKeyCreator, TKeyModifier>
-        where TEntity : BaseAuditableEntity<TEntity, TKey, TKeyCreator, TKeyModifier>
+    public class BaseAuditableEntity<TEntity, TKey, TKeyCreator, TKeyModifier> 
+        : BaseEntity<TEntity, TKey>,
+        AuditableEntity<TKey, TKeyCreator, TKeyModifier>
+        where TEntity : BaseEntity<TEntity, TKey>
         where TKey : struct, IEquatable<TKey>
         where TKeyCreator : struct, IEquatable<TKeyCreator>
         where TKeyModifier : struct, IEquatable<TKeyCreator>
@@ -21,18 +23,10 @@
         /// <param name="id">The Entity identity</param>
         /// <param name="creatorId">The Entity creator identity (ID)</param>
         public BaseAuditableEntity(TKey id, TKeyCreator creatorId)
-        {
-            _id = id;
-            _creatorId = creatorId;
-        }
+           : base(id)
+           => _creatorId = creatorId;
         #endregion
         #region Properties
-        /// <summary>
-        /// Entity Identity (ID)
-        /// </summary>
-        public TKey Id => _id;
-        private readonly TKey _id;
-
         /// <summary>
         /// The DateTime that Entity it was Created
         /// </summary>
@@ -44,7 +38,6 @@
         ///</summary>
         public DateTime CreatedDateTime => _createdDateTime;
         private readonly DateTime _createdDateTime;
-
 
         /// <summary>
         /// Entity Last Modifier identity (ID)
@@ -58,13 +51,12 @@
         public DateTime? LastModifiedDateTime => _lastModifiedDateTime;
         private DateTime? _lastModifiedDateTime;
         #endregion
-        #region Fields
-        /// <summary>
-        /// The Name of Identity (ID) Property
-        /// </summary>
-        public const string ID = nameof(Id);
-        #endregion
         #region Methods
+        /// <summary>
+        /// Modify Auditing Information
+        /// </summary>
+        /// <param name="modifierId">The Modifier Id</param>
+        /// <param name="lastModifiedDate">The ModifiedDateTime</param>
         public virtual void Modify(TKeyModifier modifierId, DateTime lastModifiedDate)
         {
             _lastModifiedBy = modifierId;
