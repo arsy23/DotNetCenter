@@ -11,43 +11,35 @@
 
     public class ObjectGuardTest
     {
-        public ObjectGuardTest() 
-            => _guard = new ObjectGuard();
-
-
-        private readonly ObjectGuard _guard;
 
         #region ForNullReference
-        #region GuardForNullReferenceMustThrowNullReferenceExceptionWhenTheObjectIsNull
+        #region GuardForNullReference*MustThrow*NullReferenceExceptionWhenTheObjectIsNull
         [Fact]
         public void GuardForNullReferenceMustThrowNullReferenceExceptionWhenTheObjectIsNull()
         {
-            EEntity @object = null;
+            EEntity? @object = null;
             Type expected = GetNullReferenceExceptionType();
-            Assert.Throws(expected, ForNullReferenceObjectGuard(@object));
+            Assert.Throws(expected, GuardObjectNullReference(@object));
         }
-
-
         #endregion
-        #region GuardForNullReferenceMustNotThrowNullReferenceExceptionWhenTheObjectIsNotNull
+        #region GuardForNullReference*MustNotThrow*NullReferenceExceptionWhenTheObjectIsNotNull
         [Fact]
         public void GuardForNullReferenceMustNotThrowNullReferenceExceptionWhenTheObjectIsNotNull()
         {
             var @object = new EEntity();
-            var exception = Record.Exception(ForNullReferenceObjectGuard(@object));
+            var exception = Record.Exception(GuardObjectNullReference(@object));
             Assert.Null(exception);
         }
-
-        private static Type GetNullReferenceExceptionType() 
-            => new NullReferenceException().GetType();
         #endregion
         #endregion
 
-        private static Action ForNullReferenceObjectGuard(EEntity @object) 
+        private static Action GuardObjectNullReference(EEntity? @object)
             => new Action(() =>
             {
                 ObjectGuard.ForNullReference(@object, nameof(@object));
             });
+        private static Type GetNullReferenceExceptionType()
+            => new NullReferenceException().GetType();
 
         #region TestCase
         public class EEntity
