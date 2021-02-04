@@ -9,6 +9,7 @@ namespace DotNetCenter.Core.Linq
     /// </summary>
     public static class LinqExtension
     {
+        #region static IEnumerable<T> ForEach<T> (this IEnumerable<T> set, Action<T> action)
         /// <summary>
         /// Execute the Action Forech items in the Set and pass item to it
         /// </summary>
@@ -22,6 +23,9 @@ namespace DotNetCenter.Core.Linq
                 action(item);
             return set;
         }
+        #endregion
+
+        #region Concat
         /// <summary>
         /// Make string concatenation
         /// </summary>
@@ -62,5 +66,6 @@ namespace DotNetCenter.Core.Linq
             }
             return @stringBuilder.ToString();
         }
+        #endregion
     }
 }
