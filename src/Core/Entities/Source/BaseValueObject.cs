@@ -8,22 +8,10 @@
     /// Base class for Value-Objects
     /// </summary>
     /// <typeparam name="TValueObject">Type of the Value-Object itself as parameter</typeparam>
-    public abstract class BaseValueObject<TValueObject> where TValueObject : BaseValueObject<TValueObject>
+    public abstract class BaseValueObject<TValueObject>
+        : BaseObject
+        where TValueObject : BaseValueObject<TValueObject>
     {
-        #region GetEqualityComponents
-        /// <summary>
-        /// Get Equality Components
-        /// </summary>
-        /// <returns>yield return class components. eg. properties, method results and ...</returns>
-        protected abstract IEnumerable<object> GetEqualityComponents();
-        #endregion
-        #region GetHashCodeCore
-        /// <summary>
-        /// Abastract class for implement custom functionality to provide Hash-Code  
-        /// </summary>
-        /// <returns>Hash-Code</returns>
-        protected abstract int GetHashCodeCore();
-        #endregion
         #region Equals
         /// <summary>
         /// Determine wheter the specified object is equal to the current object; otherwize,false
@@ -34,22 +22,14 @@
         /// <returns>true if the specified object is equal to the current object; otherwize,false</returns>
         public override bool Equals(object obj)
         {
-            if (obj == null)  return false;
-            if (GetType() != obj.GetType())  return false;
+            if (obj == null) return false;
+            if (GetType() != obj.GetType()) return false;
 
             var valueObject = (TValueObject)obj;
 
             return GetEqualityComponents()
                 .SequenceEqual(valueObject.GetEqualityComponents());
         }
-        #endregion
-        #region GetHashCode
-        /// <summary>
-        /// Provide Hash-Code for the this object
-        /// </summary>
-        /// <returns>Hash-Code</returns>
-        public override int GetHashCode()
-         => GetHashCodeCore();
         #endregion
         #region Operators
         #region ==
@@ -59,11 +39,13 @@
         /// <param name="firstObj">f</param>
         /// <param name="secondObj"></param>
         /// <returns></returns>
-        public static bool operator ==(BaseValueObject<TValueObject> firstObj, BaseValueObject<TValueObject> secondObj)
-            => firstObj is null && secondObj is null
-            ? true : firstObj is null
-            || secondObj is null
-            ? false : firstObj.Equals(secondObj);
+        public static bool operator ==(BaseValueObject<TValueObject>? firstObj, BaseValueObject<TValueObject>? secondObj)
+        {
+            if (firstObj is null || secondObj is null)
+                throw new(nameof(secondObj) + nameof(firstObj));
+
+            return firstObj.Equals(secondObj);
+        }
         #endregion
         #region !=
         /// <summary>
