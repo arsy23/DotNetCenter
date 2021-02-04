@@ -10,27 +10,17 @@ namespace DotNetCenter.Core.Linq
     public static class LinqExtension
     {
         /// <summary>
-        /// Copy The Value of type T form source to target object
+        /// Execute the Action Forech items in the Set and pass item to it
         /// </summary>
-        /// <typeparam name="T">Type of the Objects</typeparam>
-        /// <param name="source">The Source object provide value for copy</param>
-        /// <param name="target">The Target object recived value from the Source object</param>
-        public static void CopyValues<T>(this T source, T target)
+        /// <typeparam name="T">Type of Set and items</typeparam>
+        /// <param name="set">Set of items</param>
+        /// <param name="action">Action that recived each items in set</param>
+        /// <returns></returns>
+        public static IEnumerable<T> ForEach<T>(this IEnumerable<T> set, Action<T> action)
         {
-            var type = typeof(T);
-            var properties = type.GetProperties().Where(prop => prop.CanRead && prop.CanWrite);
-            foreach (var prop in properties)
-            {
-                var value = prop.GetValue(source, null);
-                if (value != null)
-                    prop.SetValue(target, value, null);
-            }
-        }
-        public static IEnumerable<T> ForEach<T>(this IEnumerable<T> enumeration, Action<T> action)
-        {
-            foreach (var item in enumeration)
+            foreach (var item in set)
                 action(item);
-            return enumeration;
+            return set;
         }
         /// <summary>
         /// Make string concatenation
