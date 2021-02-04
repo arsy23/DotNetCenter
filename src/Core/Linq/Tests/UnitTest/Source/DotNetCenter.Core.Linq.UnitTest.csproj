@@ -29,7 +29,7 @@
 	</ItemGroup>
 	
 	<ItemGroup>
-	<ProjectReference Include="..\..\..\Source\DotNetCenter.Core.Linq.csproj" />
+	  <ProjectReference Include="..\..\..\Source\DotNetCenter.Core.Linq.csproj" />
 	</ItemGroup>
 
 </Project>

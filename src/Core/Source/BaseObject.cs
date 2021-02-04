@@ -18,14 +18,14 @@ namespace DotNetCenter.Core
         #endregion
         #region GetHashCodeCore
         /// <summary>
-        /// Abastract class for implement custom functionality to provide Hash-Code  
+        /// Get Hash-Code of the inherited class components resulted by System.HashCode.Combine()
         /// </summary>
         /// <returns>Hash-Code</returns>
         protected abstract int GetHashCodeCore();
         #endregion
         #region GetHashCode
         /// <summary>
-        /// Provide Hash-Code for the this object
+        /// Get Hash-Code for the this object
         /// </summary>
         /// <returns>Hash-Code</returns>
         public override int GetHashCode()

@@ -6,7 +6,7 @@ namespace DotNetCenter.Core.Linq.UnitTest
     using Xunit;
     public class LinqExtensionTests
     {
-        static char extraSpace = ' ';
+        static readonly char extraSpace = ' ';
 
         #region ForEach<T>
         #region TheArrayNumbers*MustMultiplyByAction*
@@ -31,11 +31,11 @@ namespace DotNetCenter.Core.Linq.UnitTest
 
         #region Concat
         #region String
-        string string1 = " ";
-        string string2 = "Successful";
-        string string3 = "Concatenation";
-        string string4 = "Strings";
-        string string5 = "!";
+        readonly string string1 = " ";
+        readonly string string2 = "Successful";
+        readonly string string3 = "Concatenation";
+        readonly string string4 = "Strings";
+        readonly string string5 = "!";
 
         #region ConcatenatedStrings*MustEqual*ToActualString
         [Fact]
@@ -81,7 +81,7 @@ namespace DotNetCenter.Core.Linq.UnitTest
         private string[] GetStrings() => new string[5] {
                 string1, string2, string3, string4, string5
         };
-        private string AddExtraSpaceAtEnd(string stringInput)
+        private static string AddExtraSpaceAtEnd(string stringInput)
             => stringInput + extraSpace;
 
         #endregion
