@@ -4,8 +4,17 @@ namespace DotNetCenter.Core.Linq
     using System.Collections.Generic;
     using System.Linq;
     using System.Text;
+    /// <summary>
+    /// Extension for Microsoft DotNet Linq Technologies
+    /// </summary>
     public static class LinqExtension
     {
+        /// <summary>
+        /// Copy The Value of type T form source to target object
+        /// </summary>
+        /// <typeparam name="T">Type of the Objects</typeparam>
+        /// <param name="source">The Source object provide value for copy</param>
+        /// <param name="target">The Target object recived value from the Source object</param>
         public static void CopyValues<T>(this T source, T target)
         {
             var type = typeof(T);
