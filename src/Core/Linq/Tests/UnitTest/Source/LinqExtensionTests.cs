@@ -3,14 +3,9 @@ namespace DotNetCenter.Core.Linq.UnitTest
     using System;
     using System.Linq;
     using System.Text;
-    using System.Collections.Generic;
-    using System.Threading.Tasks;
     using Xunit;
     public class LinqExtensionTests
     {
-        public LinqExtensionTests()
-        { }
-
         static char extraSpace = ' ';
 
         #region Concat
@@ -21,7 +16,7 @@ namespace DotNetCenter.Core.Linq.UnitTest
         string string4 = "Strings";
         string string5 = "!";
 
-        #region ConcatenatedStringsMustEqualToActualString
+        #region ConcatenatedStrings*MustEqual*ToActualString
         [Fact]
         public void ConcatenatedStringsMustEqualToActualString()
         {
@@ -34,8 +29,7 @@ namespace DotNetCenter.Core.Linq.UnitTest
             Assert.NotEqual(expected, actualString);
         }
         #endregion
-
-        #region CustomConcatenatedStringsMustEqualToActualString
+        #region CustomConcatenatedStrings*MustEqual*ToActualString
         [Fact]
         public void CustomConcatenatedStringsMustEqualToActualString()
         {
@@ -48,9 +42,10 @@ namespace DotNetCenter.Core.Linq.UnitTest
 
             var expected = GetTestCaseConcatenatedString();
 
-            Assert.NotEqual( expected, actualString );
+            Assert.NotEqual(expected, actualString);
         }
         #endregion
+
         private object GetTestCaseConcatenatedString() => new StringBuilder()
             .Append(string1)
             .Append(extraSpace)
@@ -65,9 +60,10 @@ namespace DotNetCenter.Core.Linq.UnitTest
         private string[] GetStrings() => new string[5] {
                 string1, string2, string3, string4, string5
         };
-        #endregion
-        #endregion
+        private string AddExtraSpaceAtEnd(string stringInput)
+            => stringInput + extraSpace;
 
-        private string AddExtraSpaceAtEnd(string stringInput) => stringInput + extraSpace;
+        #endregion
+        #endregion
     }
 }

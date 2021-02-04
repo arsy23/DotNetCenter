@@ -1,10 +1,5 @@
 ﻿namespace DotNetCenter.Core.Entities.UnitTest
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using Xunit;
 
     public class BaseValueObjectTest
@@ -12,7 +7,7 @@
         private const int Amount = 23000;
 
         #region Equals
-        #region SameValueObjectsMustBeEqualsWithEqualsMethod
+        #region SameValueObjects*MustBeEquals*WithEqualsMethod
         [Fact]
         public void SameValueObjectsMustBeEqualsWithEqualsMethod()
         {
@@ -22,7 +17,7 @@
             Assert.True(firstMoneyResource.Equals(secondMoneyResource));
         }
         #endregion
-        #region DiffrentValueObjectsMustBeNotEqualsWithEqualsMethod
+        #region DiffrentValueObjects*MustBeNotEquals*WithEqualsMethod
         [Fact]
         public void DiffrentValueObjectsMustBeNotEqualsWithEqualsMethod()
         {
@@ -33,6 +28,7 @@
         }
         #endregion
         #endregion
+
         #region Operators
         #region == Operator
         #region SameValueObjectsMustBeEqualWithObjectEqualityOperator
