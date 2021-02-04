@@ -11,19 +11,19 @@
         [Fact]
         public void SameValueObjectsMustBeEqualsWithEqualsMethod()
         {
-            var moneyuilder = new MoneyValueObjectBuilder();
-            var firstMoneyResource = moneyuilder.GetMoney(Amount);
-            var secondMoneyResource = moneyuilder.GetMoney(Amount);
+            var builder = new MoneyValueObjectBuilder();
+            var firstMoneyResource = builder.GetMoney(Amount);
+            var secondMoneyResource = builder.GetMoney(Amount);
             Assert.True(firstMoneyResource.Equals(secondMoneyResource));
         }
         #endregion
-        #region DiffrentValueObjects*MustBeNotEquals*WithEqualsMethod
+        #region DifferentValueObjects*MustBeNotEquals*WithEqualsMethod
         [Fact]
-        public void DiffrentValueObjectsMustBeNotEqualsWithEqualsMethod()
+        public void DifferentValueObjectsMustBeNotEqualsWithEqualsMethod()
         {
-            var moneyuilder = new MoneyValueObjectBuilder();
-            var firstMoneyResource = moneyuilder.GetMoney(Amount);
-            var secondMoneyResource = moneyuilder.GetMoney(Amount + 32000);
+            var builder = new MoneyValueObjectBuilder();
+            var firstMoneyResource = builder.GetMoney(Amount);
+            var secondMoneyResource = builder.GetMoney(Amount + 32000);
             Assert.False(firstMoneyResource.Equals(secondMoneyResource));
         }
         #endregion
@@ -35,9 +35,9 @@
         [Fact]
         public void SameValueObjectsMustBeEqualWithObjectEqualityOperator()
         {
-            var moneyuilder = new MoneyValueObjectBuilder();
-            var firstMoneyResource = moneyuilder.GetMoney(Amount);
-            var secondMoneyResource = moneyuilder.GetMoney(Amount);
+            var builder = new MoneyValueObjectBuilder();
+            var firstMoneyResource = builder.GetMoney(Amount);
+            var secondMoneyResource = builder.GetMoney(Amount);
             Assert.True(firstMoneyResource == secondMoneyResource);
         }
         #endregion
@@ -45,9 +45,9 @@
         [Fact]
         public void DifferentValueObjectsMustNotEqualWithObjectEqualityOperator()
         {
-            var moneyuilder = new MoneyValueObjectBuilder();
-            var firstMoneyResource = moneyuilder.GetMoney(Amount);
-            var secondMoneyResource = moneyuilder.GetMoney(Amount + 32000);
+            var builder = new MoneyValueObjectBuilder();
+            var firstMoneyResource = builder.GetMoney(Amount);
+            var secondMoneyResource = builder.GetMoney(Amount + 32000);
             Assert.False(firstMoneyResource == secondMoneyResource);
         }
         #endregion
@@ -57,9 +57,9 @@
         [Fact]
         public void SameValueObjectsComparisonMustBeFalseWithObjectNotEqualityOperator()
         {
-            var moneyuilder = new MoneyValueObjectBuilder();
-            var firstMoneyResource = moneyuilder.GetMoney(Amount);
-            var secondMoneyResource = moneyuilder.GetMoney(Amount);
+            var builder = new MoneyValueObjectBuilder();
+            var firstMoneyResource = builder.GetMoney(Amount);
+            var secondMoneyResource = builder.GetMoney(Amount);
             Assert.False(firstMoneyResource != secondMoneyResource);
         }
         #endregion
@@ -67,9 +67,9 @@
         [Fact]
         public void DifferentValueObjectsComparisonMustBeTrueWithObjectNotEqualityOperator()
         {
-            var moneyuilder = new MoneyValueObjectBuilder();
-            var firstMoneyResource = moneyuilder.GetMoney(Amount);
-            var secondMoneyResource = moneyuilder.GetMoney(Amount + 32000);
+            var builder = new MoneyValueObjectBuilder();
+            var firstMoneyResource = builder.GetMoney(Amount);
+            var secondMoneyResource = builder.GetMoney(Amount + 32000);
             Assert.True(firstMoneyResource != secondMoneyResource);
         }
         #endregion

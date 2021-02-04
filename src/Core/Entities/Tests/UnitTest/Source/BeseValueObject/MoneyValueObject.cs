@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     public class MoneyValueObject : BaseValueObject<MoneyValueObject>
     {
-        public MoneyValueObject(long amount) 
+        public MoneyValueObject(long amount)
             => _amount = amount;
 
         public long Amount => _amount;

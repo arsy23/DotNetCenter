@@ -41,9 +41,7 @@
         #region Methods
         #region Equals
         /// <summary>
-        /// Determine wheter the specified object is equal to the current object; otherwize,false
-        /// Support custom equality base on the BaseEntity Abstract Methods implementations
-        /// How to using this method case-studies, Available in test cases 
+        /// Determine wheter the specified object is equal to the current object; otherwize,false 
         /// </summary>
         /// <param name="obj">The Target Object</param>
         /// <returns>true if the specified object is equal to the current object; otherwize,false</returns>
