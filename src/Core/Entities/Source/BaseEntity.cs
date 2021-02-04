@@ -22,6 +22,7 @@
         public BaseEntity(TKey id)
             => _id = id;
         #endregion
+
         #region Properties
         /// <summary>
         /// Entity Identity (ID)
@@ -29,13 +30,35 @@
         public TKey Id => _id;
         private readonly TKey _id;
         #endregion
+
         #region Fields
         /// <summary>
         /// The Name of Identity (ID) Property
         /// </summary>
         public const string ID = nameof(Id);
         #endregion
+
         #region Methods
+        #region Equals
+        /// <summary>
+        /// Determine wheter the specified object is equal to the current object; otherwize,false
+        /// Support custom equality base on the BaseEntity Abstract Methods implementations
+        /// How to using this method case-studies, Available in test cases 
+        /// </summary>
+        /// <param name="obj">The Target Object</param>
+        /// <returns>true if the specified object is equal to the current object; otherwize,false</returns>
+        public override bool Equals(object obj)
+        {
+            if (obj == null) return false;
+            if (GetType() != obj.GetType()) return false;
+
+            var valueObject = (TEntity)obj;
+
+            return GetEqualityComponents()
+                .SequenceEqual(valueObject.GetEqualityComponents());
+        }
+        #endregion
+
         #region Operators
         #region ==
         /// <summary>
@@ -63,6 +86,7 @@
             => !(firstObject == secondObj);
         #endregion
         #endregion
+
         #region CopyValues
         /// <summary>
         /// Copy The Value of type Entity-Key- form this object to target object
@@ -86,6 +110,16 @@
             }
             return ref target;
         }
+
+        #region GetHashCode
+        /// <summary>
+        /// Get Hash-Code for this object
+        /// </summary>
+        /// <returns>Hash-Code</returns>
+        public override int GetHashCode()
+            => GetHashCodeCore();
+        #endregion
+
         #endregion
         #endregion
     }

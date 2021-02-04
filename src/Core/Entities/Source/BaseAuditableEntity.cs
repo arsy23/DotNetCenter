@@ -26,6 +26,7 @@
            : base(id)
            => _creatorId = creatorId;
         #endregion
+
         #region Properties
         /// <summary>
         /// The DateTime that Entity it was Created
@@ -51,6 +52,7 @@
         public DateTime? LastModifiedDateTime => _lastModifiedDateTime;
         private DateTime? _lastModifiedDateTime;
         #endregion
+
         #region Methods
         /// <summary>
         /// Modify Auditing Information

@@ -31,6 +31,7 @@
                 .SequenceEqual(valueObject.GetEqualityComponents());
         }
         #endregion
+
         #region Operators
         #region ==
         /// <summary>
@@ -57,6 +58,15 @@
         public static bool operator !=(BaseValueObject<TValueObject> firstObject, BaseValueObject<TValueObject> secondObj)
             => !(firstObject == secondObj);
         #endregion
+        #endregion
+
+        #region GetHashCode
+        /// <summary>
+        /// Get Hash-Code for this object
+        /// </summary>
+        /// <returns>Hash-Code</returns>
+        public override int GetHashCode()
+         => GetHashCodeCore();
         #endregion
     }
 }
