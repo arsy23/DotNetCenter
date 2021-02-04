@@ -8,6 +8,27 @@ namespace DotNetCenter.Core.Linq.UnitTest
     {
         static char extraSpace = ' ';
 
+        #region ForEach<T>
+        #region TheArrayNumbers*MustMultiplyByAction*
+        [Fact]
+        public void TheArrayNumbersMustMultiplyByAction()
+        {
+            var array = new[] { 1, 2, 3, 4, 5 };
+            var actualResult = 1;
+            var resultOfMultiply = 1;
+
+            for (int i = 1; i <= 5; i++)
+                actualResult *= i;
+
+            array.ForEach((int number) =>
+            {
+                resultOfMultiply *= number;
+            });
+            Assert.Equal(resultOfMultiply, actualResult);
+        }
+        #endregion
+        #endregion
+
         #region Concat
         #region String
         string string1 = " ";
