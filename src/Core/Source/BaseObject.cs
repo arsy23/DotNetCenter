@@ -5,7 +5,7 @@ using System.Text;
 namespace DotNetCenter.Core
 {
     /// <summary>
-    /// Abstract class for ay object in DotNetCenter framework
+    /// Abstract class for all objects in DotNetCenter framework
     /// </summary>
     public abstract class BaseObject : object
     {
@@ -25,7 +25,7 @@ namespace DotNetCenter.Core
         #endregion
         #region GetHashCode
         /// <summary>
-        /// Get Hash-Code for the this object
+        /// Get Hash-Code for this object
         /// </summary>
         /// <returns>Hash-Code</returns>
         public override int GetHashCode()
