@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<Authors>Arsalan Fallahpour</Authors>
-		<Description>DotNetCenter Core ErrorHandlers Class Library</Description>
-		<Summary>DotNetCenter Core ErrorHandlers Class Library</Summary>
+		<Description>DotNetCenter.Core.ErrorHandlers Framework library</Description>
+		<Summary>DotNetCenter.Core.ErrorHandlers Framework library</Summary>
 		<Copyright>Copyright Arsalan Fallahpour</Copyright>
 		<NeutralLanguage>$(NeutralLanguage)</NeutralLanguage>
 		<Title>DotNetCenter</Title>

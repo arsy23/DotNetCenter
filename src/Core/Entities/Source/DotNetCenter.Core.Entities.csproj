@@ -2,8 +2,8 @@
 
 	<PropertyGroup>
 		<Authors>Arsalan Fallahpour</Authors>
-		<Description>DotNetCenter Core Entities Class Library</Description>
-		<Summary>DotNetCenter Core Entities Class Library</Summary>
+		<Description>DotNetCenter.Core.Entities Framework library</Description>
+		<Summary>DotNetCenter.Core.Entities Framework library</Summary>
 		<Copyright>Copyright Arsalan Fallahpour</Copyright>
 		<NeutralLanguage>$(NeutralLanguage)</NeutralLanguage>
 		<Title>DotNetCenter</Title>
