@@ -1,11 +1,13 @@
 ﻿namespace DotNetCenter.DateTime.DependencyResolution
 {
     using DotNetCenter.DateTime.Common;
-
     using Microsoft.Extensions.DependencyInjection;
-    public static class DateTimesDependencyInjection
+    /// <summary>
+    /// DateTime Dependency Injection Container
+    /// </summary>
+    public static class DateTimeDIC
     {
-        public static IServiceCollection AddDefaultDateTimeService(this IServiceCollection services)
+        public static IServiceCollection AddDefaultDateTimeServices(this IServiceCollection services)
         {
             services.AddTransient<CompoundableDateTimeNow, CompoundDateTimeNowService>();
             services.AddTransient<CompoundableDateTime, CompoundDateTimeService>();
