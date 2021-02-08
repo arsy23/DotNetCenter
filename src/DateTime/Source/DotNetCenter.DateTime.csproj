@@ -10,7 +10,7 @@
 		<PackageId>DotNetCenter.DateTime</PackageId>
 		<Product>DotNetCenter</Product>
 		<TargetFrameworks>$(TargetNetFrameworkNames)</TargetFrameworks>
-		<PackageTags>dotnetcenter;dccore;dccorecore;classlibrary;</PackageTags>
+		<PackageTags>dotnetcenter;dcdatetime;dccoredatetime;framework;</PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
 		<Version>$(ClasslibraryVersion)</Version>
 		<AssemblyVersion>$(AssemblyVersion)</AssemblyVersion>

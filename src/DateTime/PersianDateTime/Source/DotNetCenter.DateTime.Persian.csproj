@@ -10,7 +10,7 @@
 		<PackageId>DotNetCenter.DateTime.Persian</PackageId>
 		<Product>DotNetCenter</Product>
 		<TargetFrameworks>$(TargetFrameworkNames)</TargetFrameworks>
-		<PackageTags>dotnetcenter;dccore;dccorecore;classlibrary;</PackageTags>
+		<PackageTags>dotnetcenter;dcdatetimepersian;dccoredatetimepersian;framework;</PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
 		<Version>$(ClasslibraryVersion)</Version>
 		<AssemblyVersion>$(AssemblyVersion)</AssemblyVersion>
