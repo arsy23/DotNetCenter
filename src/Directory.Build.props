@@ -1,14 +1,15 @@
 <Project>
   <PropertyGroup>
 	  <TargetFrameworkNames>netstandard2.0;netstandard2.1</TargetFrameworkNames>
+	  <TargetNetFrameworkNames>net5.0;netcoreapp3.1;</TargetNetFrameworkNames>
 	  <UnitTestProjectTargetFrameworkNames>net5.0;netcoreapp3.1;</UnitTestProjectTargetFrameworkNames>
 	  <RuntimeIdentifierNames>win81-x64;win81-x86;win81-arm;win81-arm64;win10-arm;win10-x64;win10-x86;win10-arm64;</RuntimeIdentifierNames>
 	  <AllAssetNames>runtime; build; native; contentfiles; analyzers</AllAssetNames>
 	  <NeutralLanguage>en-US</NeutralLanguage>
 	  <LangVersion>latest</LangVersion>
-	  <FileVersion>0.1.5</FileVersion>
-	  <AssemblyVersion>0.1.5</AssemblyVersion>
-	  <ClasslibraryVersion>0.1.5</ClasslibraryVersion>
+	  <FileVersion>0.1.0</FileVersion>
+	  <AssemblyVersion>0.1.0</AssemblyVersion>
+	  <ClasslibraryVersion>0.1.0</ClasslibraryVersion>
 	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
 	  <MicrosoftCodeAnalysisNetAnalyzersPackageVersion>3.3.2</MicrosoftCodeAnalysisNetAnalyzersPackageVersion>
 	  <MicrosoftNetCompilersToolsetPackageVersion>3.9.0-2.final</MicrosoftNetCompilersToolsetPackageVersion>
