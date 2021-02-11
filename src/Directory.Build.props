@@ -7,9 +7,9 @@
 	  <AllAssetNames>runtime; build; native; contentfiles; analyzers</AllAssetNames>
 	  <NeutralLanguage>en-US</NeutralLanguage>
 	  <LangVersion>latest</LangVersion>
-	  <FileVersion>0.1.0</FileVersion>
-	  <AssemblyVersion>0.1.0</AssemblyVersion>
-	  <ClasslibraryVersion>0.1.0</ClasslibraryVersion>
+	  <FileVersion>0.1.5</FileVersion>
+	  <AssemblyVersion>0.1.5</AssemblyVersion>
+	  <ClasslibraryVersion>0.1.5</ClasslibraryVersion>
 	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
 	  <MicrosoftCodeAnalysisNetAnalyzersPackageVersion>3.3.2</MicrosoftCodeAnalysisNetAnalyzersPackageVersion>
 	  <MicrosoftNetCompilersToolsetPackageVersion>3.9.0-2.final</MicrosoftNetCompilersToolsetPackageVersion>
