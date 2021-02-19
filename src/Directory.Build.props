@@ -7,9 +7,9 @@
 	  <AllAssetNames>runtime; build; native; contentfiles; analyzers</AllAssetNames>
 	  <NeutralLanguage>en-US</NeutralLanguage>
 	  <LangVersion>latest</LangVersion>
-	  <FileVersion>0.1.0</FileVersion>
-	  <AssemblyVersion>0.1.0</AssemblyVersion>
-	  <ClasslibraryVersion>0.1.0</ClasslibraryVersion>
+	  <FileVersion>0.2.0</FileVersion>
+	  <AssemblyVersion>0.2.0</AssemblyVersion>
+	  <ClasslibraryVersion>0.2.0</ClasslibraryVersion>
 	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
 	  <MicrosoftCodeAnalysisNetAnalyzersPackageVersion>3.3.2</MicrosoftCodeAnalysisNetAnalyzersPackageVersion>
 	  <MicrosoftNetCompilersToolsetPackageVersion>3.9.0-2.final</MicrosoftNetCompilersToolsetPackageVersion>
@@ -22,4 +22,9 @@
 	  <EnableNullable>enable</EnableNullable>
   
 </PropertyGroup>
+	<ItemGroup>
+		<!-- Compiler to support nullable in non-preview VS2019 -->
+		<PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="$(MicrosoftNetCompilersToolsetPackageVersion)" PrivateAssets="All" />
+
+	</ItemGroup>
 </Project>
