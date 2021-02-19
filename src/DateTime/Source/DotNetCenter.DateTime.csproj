@@ -63,12 +63,11 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="$(MicrosoftSourceLinkGitHubPackageVersion)">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
 		<PackageReference Include="DotNetCenter.Core.Entities" Version="0.1.5" />
-		
-		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="$(MicrosoftSourceLinkGitHubPackageVersion)" PrivateAssets="All" />
-		<!-- Compiler to support nullable in non-preview VS2019 -->
-		<PackageReference Include="Microsoft.Net.Compilers.Toolset" Version="$(MicrosoftNetCompilersToolsetPackageVersion)" PrivateAssets="All" />
 	</ItemGroup>
 
 	<ItemGroup>
