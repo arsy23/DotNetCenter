@@ -32,13 +32,13 @@
         /// The DateTime that Entity it was Created
         /// </summary>
         public TKeyCreator CreatedBy => _creatorId;
-        private readonly TKeyCreator _creatorId;
+        private TKeyCreator _creatorId;
 
         /// <summary>
         /// Initial Date-Time that Entity it was Created
         ///</summary>
         public DateTime CreatedDateTime => _createdDateTime;
-        private readonly DateTime _createdDateTime;
+        private DateTime _createdDateTime;
 
         /// <summary>
         /// Entity Last Modifier identity (ID)
@@ -63,6 +63,18 @@
         {
             _lastModifiedBy = modifierId;
             _lastModifiedDateTime = lastModifiedDate;
+        }
+
+        public void EntityModified(TKeyModifier modifierId, DateTime modifiedDateTime)
+        {
+            _lastModifiedBy = modifierId;
+            _lastModifiedDateTime = modifiedDateTime;
+        }
+
+        public void EntityCreated(TKeyCreator creatorId, DateTime createdDateTime)
+        {
+            _creatorId = creatorId;
+            _createdDateTime = createdDateTime;
         }
         #endregion
     }
