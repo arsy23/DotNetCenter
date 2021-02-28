@@ -1,7 +1,7 @@
 <Project>
   <PropertyGroup>
-  	  <ProductName>DotNetCenter.Beyond</ProductName>
-  	  <ProductTitle>DotNetCenter.Beyond</ProductTitle>
+  	  <ProductName>DotNetCenter</ProductName>
+  	  <ProductTitle>DotNetCenter</ProductTitle>
 	  <TargetFrameworkNames>netstandard2.0;netstandard2.1</TargetFrameworkNames>
 	  <TargetNetFrameworkNames>net5.0;netcoreapp3.1;</TargetNetFrameworkNames>
 	  <UnitTestProjectTargetFrameworkNames>net5.0;netcoreapp3.1;</UnitTestProjectTargetFrameworkNames>
