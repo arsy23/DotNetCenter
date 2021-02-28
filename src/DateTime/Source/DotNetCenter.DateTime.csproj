@@ -12,9 +12,9 @@
 		<TargetFrameworks>$(TargetNetFrameworkNames)</TargetFrameworks>
 		<PackageTags>dotnetcenter;dcdatetime;dccoredatetime;framework;</PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
-		<Version>$(ClasslibraryVersion)</Version>
-		<AssemblyVersion>$(AssemblyVersion)</AssemblyVersion>
-		<FileVersion>$(FileVersion)</FileVersion>
+		<Version>$(CoreClasslibraryVersion)</Version>
+		<AssemblyVersion>$(CoreAssemblyVersion)</AssemblyVersion>
+		<CoreFileVersion>$(CoreFileVersion)</CoreFileVersion>
 		<LangVersion>$(LangVersion)</LangVersion>
 		<Features>strict</Features>
 		<RootNamespace>DotNetCenter.DateTime</RootNamespace>
