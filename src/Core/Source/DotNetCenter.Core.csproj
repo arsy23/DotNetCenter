@@ -6,9 +6,9 @@
 		<Summary>DotNetCenter.Core Framework library</Summary>
 		<Copyright>Copyright Arsalan Fallahpour</Copyright>
 		<NeutralLanguage>$(NeutralLanguage)</NeutralLanguage>
-		<Title>DotNetCenter</Title>
+		<Title>$(ProjectTitle)</Title>
 		<PackageId>DotNetCenter.Core</PackageId>
-		<Product>DotNetCenter</Product>
+		<Product>$(ProductName)</Product>
 		<TargetFrameworks>$(TargetFrameworkNames)</TargetFrameworks>
 		<PackageTags>dotnetcenter;dccore;dccorecore;classlibrary;</PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
@@ -17,7 +17,6 @@
 		<FileVersion>$(FileVersion)</FileVersion>
 		<LangVersion>$(LangVersion)</LangVersion>
 		<Features>strict</Features>
-		<Nullable>enable</Nullable>
 		<RootNamespace>DotNetCenter.Core</RootNamespace>
 		<AssemblyName>DotNetCenter.Core</AssemblyName>
 		<SignAssembly>true</SignAssembly>

@@ -6,9 +6,9 @@
 		<Summary>DotNetCenter.Core.ExceptionHandlers Framework library</Summary>
 		<Copyright>Copyright Arsalan Fallahpour</Copyright>
 		<NeutralLanguage>$(NeutralLanguage)</NeutralLanguage>
-		<Title>DotNetCenter</Title>
+		<Title>$(ProjectTitle)</Title>
 		<PackageId>DotNetCenter.Core.ExceptionHandlers</PackageId>
-		<Product>DotNetCenter</Product>
+		<Product>$(ProductName)</Product>
 		<TargetFrameworks>$(TargetFrameworkNames)</TargetFrameworks>
 		<PackageTags>dotnetcenter;dccore;dccoreexceptiohandlers;classlibrary;</PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
@@ -17,7 +17,6 @@
 		<FileVersion>$(FileVersion)</FileVersion>
 		<LangVersion>$(LangVersion)</LangVersion>
 		<Features>strict</Features>
-		<Nullable>enable</Nullable>
 		<RootNamespace>DotNetCenter.Core.ExceptionHandlers</RootNamespace>
 		<AssemblyName>DotNetCenter.Core.ExceptionHandlers</AssemblyName>
 		<SignAssembly>true</SignAssembly>
@@ -36,6 +35,7 @@
 		<ContinuousIntegrationBuild Condition="'$(GITHUB_ACTIONS)' == 'true'">true</ContinuousIntegrationBuild>
 		<EnableNETAnalyzers>$(EnableNETAnalyzers)</EnableNETAnalyzers>
 		<EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+		<Nullable>$(EnableNullable)</Nullable>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
