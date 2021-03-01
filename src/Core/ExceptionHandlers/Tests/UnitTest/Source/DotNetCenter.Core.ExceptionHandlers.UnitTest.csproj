@@ -3,9 +3,9 @@
   <PropertyGroup>
 	  <TargetFrameworks>$(UnitTestProjectTargetFrameworkNames);</TargetFrameworks>
 	  <IsPackable>false</IsPackable>
-	  <Version>$(ClasslibraryVersion)</Version>
-	  <AssemblyVersion>$(AssemblyVersion)</AssemblyVersion>
-	  <FileVersion>$(FileVersion)</FileVersion>
+	  <Version>$(CoreClasslibraryVersion)</Version>
+	  <AssemblyVersion>$(CoreAssemblyVersion)</AssemblyVersion>
+	  <CoreFileVersion>$(CoreFileVersion)</CoreFileVersion>
 	  <LangVersion>$(LangVersion)</LangVersion>
 	  <Nullable>$(EnableNullable)</Nullable>
   </PropertyGroup>

@@ -13,9 +13,9 @@
 		<Product>$(ProductName)</Product>
 		<PackageTags></PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
-		<Version>$(ClasslibraryVersion)</Version>
-		<AssemblyVersion>$(AssemblyVersion)</AssemblyVersion>
-		<FileVersion>$(FileVersion)</FileVersion>
+		<Version>$(CoreClasslibraryVersion)</Version>
+		<AssemblyVersion>$(CoreAssemblyVersion)</AssemblyVersion>
+		<FileVersion>$(CoreFileVersion)</FileVersion>
 		<LangVersion>$(LangVersion)</LangVersion>
 		<Features>strict</Features>
 		<RootNamespace>$(ClassLibName)</RootNamespace>
