@@ -6,9 +6,9 @@
 		<Summary>DotNetCenter.DateTime.Persian Framework library</Summary>
 		<Copyright>Copyright Arsalan Fallahpour</Copyright>
 		<NeutralLanguage>$(NeutralLanguage)</NeutralLanguage>
-		<Title>DotNetCenter</Title>
+		<Title>$(ProjectTitle)</Title>
 		<PackageId>DotNetCenter.DateTime.Persian</PackageId>
-		<Product>DotNetCenter</Product>
+		<Product>$(ProductName)</Product>
 		<TargetFrameworks>$(TargetFrameworkNames)</TargetFrameworks>
 		<PackageTags>dotnetcenter;dcdatetimepersian;dccoredatetimepersian;framework;</PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
@@ -17,7 +17,6 @@
 		<FileVersion>$(FileVersion)</FileVersion>
 		<LangVersion>$(LangVersion)</LangVersion>
 		<Features>strict</Features>
-		<Nullable>enable</Nullable>
 		<RootNamespace>DotNetCenter.DateTime.Persian</RootNamespace>
 		<AssemblyName>DotNetCenter.DateTime.Persian</AssemblyName>
 		<SignAssembly>true</SignAssembly>

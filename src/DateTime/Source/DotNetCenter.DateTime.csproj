@@ -6,18 +6,17 @@
 		<Summary>DotNetCenter.DateTime Framework library</Summary>
 		<Copyright>Copyright Arsalan Fallahpour</Copyright>
 		<NeutralLanguage>$(NeutralLanguage)</NeutralLanguage>
-		<Title>DotNetCenter</Title>
+		<Title>$(ProjectTitle)</Title>
 		<PackageId>DotNetCenter.DateTime</PackageId>
-		<Product>DotNetCenter</Product>
+		<Product>$(ProductName)</Product>
 		<TargetFrameworks>$(TargetNetFrameworkNames)</TargetFrameworks>
 		<PackageTags>dotnetcenter;dcdatetime;dccoredatetime;framework;</PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
-		<Version>$(ClasslibraryVersion)</Version>
-		<AssemblyVersion>$(AssemblyVersion)</AssemblyVersion>
-		<FileVersion>$(FileVersion)</FileVersion>
+		<Version>$(CoreClasslibraryVersion)</Version>
+		<AssemblyVersion>$(CoreAssemblyVersion)</AssemblyVersion>
+		<CoreFileVersion>$(CoreFileVersion)</CoreFileVersion>
 		<LangVersion>$(LangVersion)</LangVersion>
 		<Features>strict</Features>
-		<Nullable>enable</Nullable>
 		<RootNamespace>DotNetCenter.DateTime</RootNamespace>
 		<AssemblyName>DotNetCenter.DateTime</AssemblyName>
 		<SignAssembly>true</SignAssembly>

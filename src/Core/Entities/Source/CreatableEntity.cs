@@ -11,6 +11,13 @@ namespace DotNetCenter.Core.Entities
     public interface CreatableEntity<TKeyCreator>
     {
         /// <summary>
+        /// Set Entity Creator Informations
+        /// </summary>
+        /// <param name="creatorId">Creator Id</param>
+        /// <param name="createdDateTime">Created Date Time</param>
+        public void EntityCreated(TKeyCreator creatorId, DateTime createdDateTime);
+
+        /// <summary>
         /// Entity Creator identity (ID)
         /// </summary>
         public TKeyCreator CreatedBy { get; }
