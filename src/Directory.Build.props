@@ -22,6 +22,7 @@
 	  <CoreCoreFileVersion>0.2.0</CoreCoreFileVersion>
 	  <CoreAssemblyVersion>0.2.0</CoreAssemblyVersion>
 	  <CoreClasslibraryVersion>0.2.0</CoreClasslibraryVersion>
+
 	  
 	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
 	  <MicrosoftCodeAnalysisNetAnalyzersPackageVersion>3.3.2</MicrosoftCodeAnalysisNetAnalyzersPackageVersion>
