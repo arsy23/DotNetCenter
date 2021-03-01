@@ -5,7 +5,7 @@
     <IsPackable>false</IsPackable>
 	<Version>$(CoreClasslibraryVersion)</Version>
 	<AssemblyVersion>$(CoreAssemblyVersion)</AssemblyVersion>
-	<CoreFileVersion>$(CoreFileVersion)</CoreFileVersion>
+	<FileVersion>$(CoreFileVersion)</FileVersion>
 	<LangVersion>$(LangVersion)</LangVersion>
     <Nullable>$(EnableNullable)</Nullable>
   </PropertyGroup>
