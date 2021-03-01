@@ -14,7 +14,7 @@
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
 		<Version>$(CoreClasslibraryVersion)</Version>
 		<AssemblyVersion>$(CoreAssemblyVersion)</AssemblyVersion>
-		<CoreFileVersion>$(CoreFileVersion)</CoreFileVersion>
+		<FileVersion>$(CoreFileVersion)</FileVersion>
 		<LangVersion>$(LangVersion)</LangVersion>
 		<Features>strict</Features>
 		<RootNamespace>DotNetCenter.DateTime</RootNamespace>

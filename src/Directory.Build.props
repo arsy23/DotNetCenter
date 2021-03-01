@@ -19,9 +19,9 @@
 	  <LangVersion>latest</LangVersion>
 	  
 	  <RepositoryUrl>https://github.com/arsalanfallahpour/DotNetCenter.git</RepositoryUrl>
-	  <CoreCoreFileVersion>0.2.0</CoreCoreFileVersion>
-	  <CoreAssemblyVersion>0.2.0</CoreAssemblyVersion>
-	  <CoreClasslibraryVersion>0.2.0</CoreClasslibraryVersion>
+	  <CoreFileVersion>0.2.1</CoreFileVersion>
+	  <CoreAssemblyVersion>0.2.1</CoreAssemblyVersion>
+	  <CoreClasslibraryVersion>0.2.1</CoreClasslibraryVersion>
 
 	  
 	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
