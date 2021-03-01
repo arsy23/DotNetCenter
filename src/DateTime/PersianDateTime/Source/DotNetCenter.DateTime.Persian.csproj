@@ -13,13 +13,8 @@
 		<Product>$(ProductName)</Product>
 		<PackageTags></PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
-<<<<<<< HEAD
-		<Version>$(DateTimeClasslibraryVersion)</Version>
-		<AssemblyVersion>$(DateTimeAssemblyVersion)</AssemblyVersion>
-=======
 		<Version>$(DateTimClasslibraryVersion)</Version>
 		<AssemblyVersion>$(DateTimAssemblyVersion)</AssemblyVersion>
->>>>>>> 97b3dba9c23d6e5ea6144ab9c6f54e4efa0c53fa
 		<FileVersion>$(DateTimeFileVersion)</FileVersion>
 		<LangVersion>$(LangVersion)</LangVersion>
 		<Features>strict</Features>

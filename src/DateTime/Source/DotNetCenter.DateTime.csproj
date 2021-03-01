@@ -52,13 +52,12 @@
 		<Optimize>true</Optimize>
 	</PropertyGroup>
 
-	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|$(SecondaryTargetNetFrameworkNames)|AnyCPU'">
-		<Optimize>true</Optimize>
-	</PropertyGroup>
-
-
-	<ItemGroup Condition=" ('$(TargetFramework)' == '$(PrimaryTargetNetFrameworkNames)') OR ('$(TargetFramework)' == '$(SecondaryTargetNetFrameworkNames)')">
-		<PackageReference Include ="DotNetCenter.Core.Entities" Version="$(CoreAssemblyVersion)"/>
+	<ItemGroup Condition=" '$(TargetFramework)' == 'net5.0'">
+		<PackageReference Include="Microsoft.CodeQuality.Analyzers" Version="3.3.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
 	</ItemGroup>
 
 
