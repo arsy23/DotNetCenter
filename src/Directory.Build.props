@@ -19,13 +19,15 @@
 	  <LangVersion>latest</LangVersion>
 	  
 	  <RepositoryUrl>https://github.com/arsalanfallahpour/DotNetCenter.git</RepositoryUrl>
-	  <CoreFileVersion>0.2.1</CoreFileVersion>
-	  <CoreAssemblyVersion>0.2.1</CoreAssemblyVersion>
-	  <CoreClasslibraryVersion>0.2.1</CoreClasslibraryVersion>
 
-	  <DateTimeFileVersion>0.2.1</DateTimeFileVersion>
-	  <DateTimeAssemblyVersion>0.2.1</DateTimeAssemblyVersion>
-	  <DateTimeClasslibraryVersion>0.2.1</DateTimeClasslibraryVersion>
+	  
+	  <CoreClasslibraryVersion>0.2</CoreClasslibraryVersion>
+	  <CoreFileVersion>$(CoreClasslibraryVersion)</CoreFileVersion>
+	  <CoreAssemblyVersion>$(CoreClasslibraryVersion)</CoreAssemblyVersion>
+
+	  <DateTimeFileVersion>0.2</DateTimeFileVersion>
+	  <DateTimeAssemblyVersion>$(DateTimeFileVersion)</DateTimeAssemblyVersion>
+	  <DateTimeClasslibraryVersion>$(DateTimeFileVersion)</DateTimeClasslibraryVersion>
 
 	  
 	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
