@@ -5,24 +5,22 @@
     /// Abstract Base class for Auditable Entity
     /// </summary>
     /// <typeparam name="TEntity">Type of the Entity itself as parameter</typeparam>
-    /// <typeparam name="TKey">The Entity key type</typeparam>
-    /// <typeparam name="TKeyCreator">The Entity Creator Key-Type</typeparam>
-    /// <typeparam name="TKeyModifier">The Entity Modifier Key-Type</typeparam>
-    public abstract class BaseAuditableEntity<TEntity, TKey, TKeyCreator, TKeyModifier> 
+    /// <typeparam name="TKey">Entity key type</typeparam>
+    /// <typeparam name="TKeyUser">Modifier Key-Type</typeparam>
+    public abstract class BaseAuditableEntity<TEntity, TKey, TKeyUser> 
         : BaseEntity<TEntity, TKey>,
-        AuditableEntity<TKey, TKeyCreator, TKeyModifier>
+        AuditableEntity<TKey, TKeyUser>
         where TEntity : BaseEntity<TEntity, TKey>
         where TKey : struct, IEquatable<TKey>
-        where TKeyCreator : struct, IEquatable<TKeyCreator>
-        where TKeyModifier : struct, IEquatable<TKeyCreator>
+        where TKeyUser : struct, IEquatable<TKeyUser>
     {
         #region Constructors
         /// <summary>
         /// Default constructor with the Entity identity (ID) and the Creator identity (ID) initialization
         /// </summary>
-        /// <param name="id">The Entity identity</param>
-        /// <param name="creatorId">The Entity creator identity (ID)</param>
-        public BaseAuditableEntity(TKey id, TKeyCreator creatorId)
+        /// <param name="id">Entity Identity (ID)</param>
+        /// <param name="creatorId">Creator identity (ID)</param>
+        public BaseAuditableEntity(TKey id, TKeyUser creatorId)
            : base(id)
            => _creatorId = creatorId;
         #endregion
@@ -31,8 +29,8 @@
         /// <summary>
         /// The DateTime that Entity it was Created
         /// </summary>
-        public TKeyCreator CreatedBy => _creatorId;
-        private TKeyCreator _creatorId;
+        public TKeyUser CreatedBy => _creatorId;
+        private TKeyUser _creatorId;
 
         /// <summary>
         /// Initial Date-Time that Entity it was Created
@@ -41,40 +39,29 @@
         private DateTime _createdDateTime;
 
         /// <summary>
-        /// Entity Last Modifier identity (ID)
+        /// Last Modifier identity (ID)
         /// </summary>
-        public TKeyModifier LastModifiedBy => _lastModifiedBy;
-        private TKeyModifier _lastModifiedBy;
+        public TKeyUser LastModifiedBy => _lastModifiedBy;
+        private TKeyUser _lastModifiedBy;
 
         /// <summary>
-        /// The Last Date-Time that Entity it was modified
+        /// Last Date-Time that Entity it was modified
         /// </summary>
         public DateTime? LastModifiedDateTime => _lastModifiedDateTime;
         private DateTime? _lastModifiedDateTime;
         #endregion
 
         #region Methods
-        /// <summary>
-        /// Modify Auditing Information
-        /// </summary>
-        /// <param name="modifierId">The Modifier Id</param>
-        /// <param name="lastModifiedDate">The ModifiedDateTime</param>
-        public virtual void Modify(TKeyModifier modifierId, DateTime lastModifiedDate)
-        {
-            _lastModifiedBy = modifierId;
-            _lastModifiedDateTime = lastModifiedDate;
-        }
 
-        public void EntityModified(TKeyModifier modifierId, DateTime modifiedDateTime)
+        /// <summary>
+        /// Register Modified State Information
+        /// </summary>
+        /// <param name="modifierId">Modifier Identity (ID)</param>
+        /// <param name="modifiedDateTime">Modified DateTime</param>
+        public void RegisterModifiedInformation(TKeyUser modifierId, DateTime modifiedDateTime)
         {
             _lastModifiedBy = modifierId;
             _lastModifiedDateTime = modifiedDateTime;
-        }
-
-        public void EntityCreated(TKeyCreator creatorId, DateTime createdDateTime)
-        {
-            _creatorId = creatorId;
-            _createdDateTime = createdDateTime;
         }
         #endregion
     }

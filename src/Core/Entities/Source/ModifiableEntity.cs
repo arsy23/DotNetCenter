@@ -10,18 +10,18 @@
     public interface ModifiableEntity<TKeyModifier>
     {
         /// <summary>
-        /// Set Entity Modified State Informations
+        /// Register Modified State Informations
         /// </summary>
         /// <param name="modifierId"></param>
         /// <param name="modifiedDateTime"></param>
-        public void EntityModified(TKeyModifier modifierId, DateTime modifiedDateTime);
+        public void RegisterModifiedInformation(TKeyModifier modifierId, DateTime modifiedDateTime);
         /// <summary>
         /// Entity Modifier identity (ID)
         /// </summary>
         public TKeyModifier LastModifiedBy { get; }
 
         /// <summary>
-        /// The Last Date-Time that Entity it was modified
+        /// Last Date-Time that Entity it was modified
         /// </summary>
         public DateTime? LastModifiedDateTime { get; }
     }

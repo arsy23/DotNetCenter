@@ -5,12 +5,11 @@ namespace DotNetCenter.Core.Entities
     ///  Auditable Entity Interface
     /// </summary>
     /// <typeparam name="TKey">The Entity key type</typeparam>
-    /// <typeparam name="TKeyCreator">The Entity Creator Key-Type</typeparam>
-    /// <typeparam name="TKeyModifier">The Entity Modifier Key-Type</typeparam>
-    public interface AuditableEntity<TKey, TKeyCreator, TKeyModifier> 
-        : Entity<TKey>, ModifiableEntity<TKeyModifier>, CreatableEntity<TKeyCreator>
+    /// <typeparam name="TKeyUser">The IdentityUser Entity Key-Type</typeparam>
+    public interface AuditableEntity<TKey, TKeyUser> 
+        : Entity<TKey>, ModifiableEntity<TKeyUser>, CreatableEntity<TKeyUser>
         where TKey :  IEquatable<TKey>
-        where TKeyCreator :  IEquatable<TKeyCreator>
+        where TKeyUser :  IEquatable<TKeyUser>
     {
         #region Properties
         #endregion
