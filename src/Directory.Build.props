@@ -35,10 +35,18 @@
 	  <MicrosoftNetCompilersToolsetPackageVersion>3.9.0-2.final</MicrosoftNetCompilersToolsetPackageVersion>
 	  <!--<MicrosoftCodeQualityAnalyzersPackageVersion>5.0.3</MicrosoftCodeQualityAnalyzersPackageVersion>-->
 	  <MicrosoftSourceLinkGitHubPackageVersion>1.0.0</MicrosoftSourceLinkGitHubPackageVersion>
-	  <XunitRunnerVisualStudioPackageVersion>2.4.3</XunitRunnerVisualStudioPackageVersion>
-	  <MicrosoftNETTestSdkPackageVersion>16.8.3</MicrosoftNETTestSdkPackageVersion>
-	  <CoverletCollectorPackageVersion>3.0.2</CoverletCollectorPackageVersion>
-	  <XunitPackageVersion>2.4.1</XunitPackageVersion>
+
+	  <XunitRunnerVisualStudioPrimaryPackageVersion>2.4.3</XunitRunnerVisualStudioPrimaryPackageVersion>
+	  <XunitRunnerVisualStudioSecondaryPackageVersion>2.4.0</XunitRunnerVisualStudioSecondaryPackageVersion>
+
+	  <MicrosoftNETTestSdkPackagePrimaryVersion>16.8.3</MicrosoftNETTestSdkPackagePrimaryVersion>
+	  <MicrosoftNETTestSdkPackageSecondaryVersion>16.5.0</MicrosoftNETTestSdkPackageSecondaryVersion>
+
+	  <CoverletCollectorPrimaryPackageVersion>3.0.2</CoverletCollectorPrimaryPackageVersion>
+	  <CoverletCollectorSecondaryPackageVersion>1.2.0</CoverletCollectorSecondaryPackageVersion>
+
+	  <XunitPrimaryPackageVersion>2.4.1</XunitPrimaryPackageVersion>
+	  <XunitSecondaryPackageVersion>2.4.0</XunitSecondaryPackageVersion>
 	  
 	  <NetPrimaryVersion>5.0.0</NetPrimaryVersion>
 	  <NetSecondaryVersion>3.1.2</NetSecondaryVersion>

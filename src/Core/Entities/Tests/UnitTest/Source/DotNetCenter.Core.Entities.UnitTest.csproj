@@ -2,11 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>$(UnitTestProjectTargetFrameworkNames);</TargetFrameworks>
-    <IsPackable>false</IsPackable>
-	<Version>$(CoreClasslibraryVersion)</Version>
-	<AssemblyVersion>$(CoreAssemblyVersion)</AssemblyVersion>
-	<FileVersion>$(CoreFileVersion)</FileVersion>
-	<LangVersion>$(LangVersion)</LangVersion>
+	<IsPackable>false</IsPackable>
     <Nullable>$(EnableNullable)</Nullable>
   </PropertyGroup>
 
@@ -15,17 +11,44 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageVersion)" />
-		<PackageReference Include="xunit" Version="$(XunitPackageVersion)" />
-		<PackageReference Include="xunit.runner.visualstudio" Version="$(XunitRunnerVisualStudioPackageVersion)" />
-		<PackageReference Include="coverlet.collector" Version="$(CoverletCollectorPackageVersion)" />
 	</ItemGroup>
 
-	<ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp3.1'">
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.5.0" />
-		<PackageReference Include="xunit" Version="2.4.0" />
-		<PackageReference Include="xunit.runner.visualstudio" Version="2.4.0" />
-		<PackageReference Include="coverlet.collector" Version="1.2.0" />
+	<ItemGroup>
+		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="$(MicrosoftSourceLinkGitHubPackageVersion)" PrivateAssets="All" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<PlatformTarget>AnyCPU</PlatformTarget>
+	</PropertyGroup>
+
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|$(PrimaryTargetNetFrameworkNames)|AnyCPU'">
+		<Optimize>true</Optimize>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|$(SecondaryTargetNetFrameworkNames)|AnyCPU'">
+		<Optimize>true</Optimize>
+	</PropertyGroup>
+
+
+	<ItemGroup Condition=" ('$(TargetFramework)' == '$(PrimaryTargetNetFrameworkNames)') OR ('$(TargetFramework)' == '$(SecondaryTargetNetFrameworkNames)')">
+	</ItemGroup>
+
+
+
+	<ItemGroup Condition="'$(TargetFramework)'=='$(PrimaryTargetNetFrameworkNames)'">
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackagePrimaryVersion)" />
+		<PackageReference Include="xunit" Version="$(XunitPrimaryPackageVersion)" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="$(XunitRunnerVisualStudioPrimaryPackageVersion)" />
+		<PackageReference Include="coverlet.collector" Version="$(CoverletCollectorPrimaryPackageVersion)" />
+
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)'=='$(SecondaryTargetNetFrameworkNames)'">
+		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageSecondaryVersion)" />
+		<PackageReference Include="xunit" Version="$(XunitSecondaryPackageVersion)" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="$(XunitRunnerVisualStudioPrimaryPackageVersion)" />
+		<PackageReference Include="coverlet.collector" Version="$(CoverletCollectorSecondaryPackageVersion)" />
 	</ItemGroup>
 
 	<ItemGroup>
