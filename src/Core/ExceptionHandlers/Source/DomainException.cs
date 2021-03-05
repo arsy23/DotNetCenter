@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal abstract class DomainException : Exception
+    public abstract class DomainException : Exception
     {
         public DomainException()
         { }
