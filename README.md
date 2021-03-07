@@ -3,7 +3,7 @@
 [![DotNetCenter.Core.Entities on fuget.org](https://www.fuget.org/packages/DotNetCenter.Core.Entities/badge.svg)](https://www.fuget.org/packages/DotNetCenter.Core.Entities)
 ![NuGet](https://img.shields.io/tokei/lines/github/arsalanfallahpour/DotNetCenter?color=darkgreen&label=total%20lines%20of%20source%20code)
 
-DotNetCenter is a free cross-platform Class-library based on .Net Technologies for increase development productivity.
+DotNetCenter is a free cross-platform Framework based on .Net Technologies for increase development productivity.
 Develop better applications in enjoyable manner.
 
 # <a href="https://github.com/arsalanfallahpour/DotNetCenter/tree/main/src/Core">DotNetCenter.Core</a>
