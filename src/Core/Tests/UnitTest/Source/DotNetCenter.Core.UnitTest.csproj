@@ -47,7 +47,7 @@
 	<ItemGroup Condition="'$(TargetFramework)'=='$(SecondaryTargetNetFrameworkNames)'">
 		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdkPackageSecondaryVersion)" />
 		<PackageReference Include="xunit" Version="$(XunitSecondaryPackageVersion)" />
-		<PackageReference Include="xunit.runner.visualstudio" Version="$(XunitRunnerVisualStudioPrimaryPackageVersion)" />
+		<PackageReference Include="xunit.runner.visualstudio" Version="$(XunitRunnerVisualStudioSecondaryPackageVersion)" />
 		<PackageReference Include="coverlet.collector" Version="$(CoverletCollectorSecondaryPackageVersion)" />
 	</ItemGroup>
 

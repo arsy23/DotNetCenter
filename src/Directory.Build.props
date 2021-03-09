@@ -6,6 +6,7 @@
 	  <PrimaryTargetNetFrameworkNames>net5.0</PrimaryTargetNetFrameworkNames>
 	  <SecondaryTargetNetFrameworkNames>netcoreapp3.1</SecondaryTargetNetFrameworkNames>
 	  <TargetNetFrameworkNames>$(SecondaryTargetNetFrameworkNames);$(PrimaryTargetNetFrameworkNames)</TargetNetFrameworkNames>
+	  <AllFrameworkNames>$(TargetNetFrameworkNames);$(TargetStandardFrameworkNames)</AllFrameworkNames>
 
 	  <UnitTestProjectTargetFrameworkNames>$(TargetNetFrameworkNames)</UnitTestProjectTargetFrameworkNames>
 
@@ -25,9 +26,12 @@
 	  <CoreFileVersion>$(CoreClasslibraryVersion)</CoreFileVersion>
 	  <CoreAssemblyVersion>$(CoreClasslibraryVersion)</CoreAssemblyVersion>
 
-	  <DateTimeFileVersion>0.2</DateTimeFileVersion>
-	  <DateTimeAssemblyVersion>$(DateTimeFileVersion)</DateTimeAssemblyVersion>
-	  <DateTimeClasslibraryVersion>$(DateTimeFileVersion)</DateTimeClasslibraryVersion>
+	  <DateTimeClasslibraryVersion>0.2</DateTimeClasslibraryVersion>
+	  <DateTimeFileVersion>$(DateTimeClasslibraryVersion)</DateTimeFileVersion>
+	  <DateTimeAssemblyVersion>$(DateTimeClasslibraryVersion)</DateTimeAssemblyVersion>
+
+	  <CoreEntitiesBugfixVersion>2</CoreEntitiesBugfixVersion>
+	  <CoreExceptionHanldersBugfixVersion>2</CoreExceptionHanldersBugfixVersion>
 
 	  
 	  <EnableNETAnalyzers>true</EnableNETAnalyzers>
