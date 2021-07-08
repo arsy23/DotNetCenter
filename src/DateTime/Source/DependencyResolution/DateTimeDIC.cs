@@ -2,6 +2,8 @@
 {
     using DotNetCenter.DateTime.Common;
     using Microsoft.Extensions.DependencyInjection;
+    using Microsoft.Extensions.DependencyInjection.Extensions;
+
     /// <summary>
     /// DateTime Dependency Injection Container
     /// </summary>
@@ -11,6 +13,12 @@
         {
             services.AddTransient<CompoundableDateTimeNow, CompoundDateTimeNowService>();
             services.AddTransient<CompoundableDateTime, CompoundDateTimeService>();
+            return services;
+        }
+        public static IServiceCollection TryAddDefaultDateTimeServices(this IServiceCollection services)
+        {
+            services.TryAddTransient<CompoundableDateTimeNow, CompoundDateTimeNowService>();
+            services.TryAddTransient<CompoundableDateTime, CompoundDateTimeService>();
             return services;
         }
     }
