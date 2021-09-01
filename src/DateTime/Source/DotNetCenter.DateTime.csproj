@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>$(TargetNetFrameworkNames)</TargetFrameworks>
+		<TargetFrameworks>$(AllFrameworkNames)</TargetFrameworks>
 		<ClassLibName>DotNetCenter.DateTime</ClassLibName>
 		<Authors>Arsalan Fallahpour</Authors>
 		<Description>$(ClassLibName) Framework library</Description>
@@ -13,7 +13,8 @@
 		<Product>$(ProductName)</Product>
 		<PackageTags></PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
-		<Version>$(DateTimeClasslibraryVersion)</Version>
+		<BugfixVersion>4</BugfixVersion>
+		<Version>$(DateTimeClasslibraryVersion).$(BugfixVersion)</Version>
 		<AssemblyVersion>$(DateTimeAssemblyVersion)</AssemblyVersion>
 		<FileVersion>$(DateTimeFileVersion)</FileVersion>
 		<LangVersion>$(LangVersion)</LangVersion>
@@ -39,6 +40,7 @@
 		<Nullable>$(EnableNullable)</Nullable>
 	</PropertyGroup>
 
+
 	<ItemGroup>
 		<PackageReference Include="Microsoft.SourceLink.GitHub" Version="$(MicrosoftSourceLinkGitHubPackageVersion)" PrivateAssets="All" />
 	</ItemGroup>
@@ -52,23 +54,31 @@
 		<Optimize>true</Optimize>
 	</PropertyGroup>
 
-	<ItemGroup Condition=" '$(TargetFramework)' == 'net5.0'">
-		<PackageReference Include="Microsoft.CodeQuality.Analyzers" Version="3.3.1">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|$(SecondaryTargetNetFrameworkNames)|AnyCPU'">
+		<Optimize>true</Optimize>
+	</PropertyGroup>
+
+
+	<ItemGroup Condition=" ('$(TargetFramework)' == '$(PrimaryTargetNetFrameworkNames)') OR ('$(TargetFramework)' == '$(SecondaryTargetNetFrameworkNames)')">
+	</ItemGroup>
+	<ItemGroup Condition=" ('$(TargetFramework)' == '$(PrimaryTargetStandardFrameworkNames)') OR ('$(TargetFramework)' == '$(SecondaryTargetStandardFrameworkNames)')">
 	</ItemGroup>
 
 
-	<ItemGroup Condition="'$(TargetFramework)'=='$(PrimaryTargetNetFrameworkNames)'">
+	<ItemGroup Condition="('$(TargetFramework)'=='$(PrimaryTargetNetFrameworkNames)') OR ('$(TargetFramework)'=='$(PrimaryTargetStandardFrameworkNames)')">
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="$(MicExtDepInjPrimaryPackageVarsion)" />
 	</ItemGroup>
 
-	<ItemGroup Condition="'$(TargetFramework)'=='$(SecondaryTargetNetFrameworkNames)'">
+	<ItemGroup Condition="('$(TargetFramework)'=='$(SecondaryTargetNetFrameworkNames)') OR ('$(TargetFramework)'=='$(SecondaryTargetStandardFrameworkNames)')">
+		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="$(MicExtDepInjSecondaryPackageVarsion)" />
+	</ItemGroup>
+	<ItemGroup Condition="('$(TargetFramework)'=='$(SecondaryTargetStandardFrameworkNames)')">
+		<!--HashCode For Netstandar2.0-->
+		<PackageReference Include="Microsoft.Bcl.HashCode" Version="1.1.1" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<ProjectReference Include="..\PersianDateTime\Source\DotNetCenter.DateTime.Persian.csproj" />
+		<PackageReference Include="DotNetCenter.Core.Entities" Version="0.2.2" />
 	</ItemGroup>
-
 </Project>

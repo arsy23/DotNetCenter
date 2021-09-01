@@ -39,9 +39,14 @@
             {
                 DateTime = DateTime.Add(duration)
             };
-
+#if NETSTANDARD2_0
         protected override int GetHashCodeCore()
             => HashCode.Combine(DateTime, PersianDateTime);
+#else
+        protected override int GetHashCodeCore()
+             => HashCode.Combine(DateTime, PersianDateTime);
+#endif
+
     }
 
 }

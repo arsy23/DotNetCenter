@@ -4,7 +4,12 @@
     using System;
     public interface CompoundableDateTimeNow
     {
-        public PersianDateTime PersianNow => PersianDateTime.Now;
-        public DateTime DateTimeNow => DateTime.Now;
+#if NETSTANDARD2_0
+        public PersianDateTime PersianNow {get;}
+        public DateTime DateTimeNow { get; }
+#else
+        public virtual PersianDateTime PersianNow => PersianDateTime.Now;
+        public virtual DateTime DateTimeNow => DateTime.Now;
+#endif
     }
 }

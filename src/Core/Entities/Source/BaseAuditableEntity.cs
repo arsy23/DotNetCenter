@@ -41,13 +41,13 @@
         /// <summary>
         /// Last Modifier identity (ID)
         /// </summary>
-        public TKeyUser LastModifiedBy => _lastModifiedBy;
+        public TKeyUser ModifiedBy => _lastModifiedBy;
         private TKeyUser _lastModifiedBy;
 
         /// <summary>
         /// Last Date-Time that Entity it was modified
         /// </summary>
-        public DateTime? LastModifiedDateTime => _lastModifiedDateTime;
+        public DateTime? ModifiedDateTime => _lastModifiedDateTime;
         private DateTime? _lastModifiedDateTime;
         #endregion
 

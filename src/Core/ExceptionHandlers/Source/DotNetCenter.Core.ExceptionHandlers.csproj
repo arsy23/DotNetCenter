@@ -13,10 +13,9 @@
 		<Product>$(ProductName)</Product>
 		<PackageTags></PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
-		<BugFixVersion>1</BugFixVersion>
-		<Version>$(CoreClasslibraryVersion).$(BugFixVersion)</Version>
-		<AssemblyVersion>$(CoreAssemblyVersion).$(BugFixVersion)</AssemblyVersion>
-		<FileVersion>$(CoreFileVersion).$(BugFixVersion)</FileVersion>
+		<Version>$(CoreClasslibraryVersion).$(CoreExceptionHanldersBugfixVersion)</Version>
+		<AssemblyVersion>$(CoreAssemblyVersion).$(CoreExceptionHanldersBugfixVersion)</AssemblyVersion>
+		<FileVersion>$(CoreFileVersion).$(CoreExceptionHanldersBugfixVersion)</FileVersion>
 		<LangVersion>$(LangVersion)</LangVersion>
 		<Features>strict</Features>
 		<RootNamespace>$(ClassLibName)</RootNamespace>
