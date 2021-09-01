@@ -18,11 +18,11 @@
         /// <summary>
         /// Entity Modifier identity (ID)
         /// </summary>
-        public TKeyModifier LastModifiedBy { get; }
+        public TKeyModifier ModifiedBy { get; }
 
         /// <summary>
         /// Last Date-Time that Entity it was modified
         /// </summary>
-        public DateTime? LastModifiedDateTime { get; }
+        public DateTime? ModifiedDateTime { get; }
     }
 }

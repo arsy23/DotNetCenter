@@ -13,7 +13,7 @@
 		<Product>$(ProductName)</Product>
 		<PackageTags></PackageTags>
 		<RuntimeIdentifiers>$(RuntimeIdentifierNames)</RuntimeIdentifiers>
-		<BugfixVersion>3</BugfixVersion>
+		<BugfixVersion>4</BugfixVersion>
 		<Version>$(DateTimeClasslibraryVersion).$(BugfixVersion)</Version>
 		<AssemblyVersion>$(DateTimeAssemblyVersion)</AssemblyVersion>
 		<FileVersion>$(DateTimeFileVersion)</FileVersion>
