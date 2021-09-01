@@ -30,7 +30,7 @@
 	  <DateTimeFileVersion>$(DateTimeClasslibraryVersion)</DateTimeFileVersion>
 	  <DateTimeAssemblyVersion>$(DateTimeClasslibraryVersion)</DateTimeAssemblyVersion>
 
-	  <CoreEntitiesBugfixVersion>2</CoreEntitiesBugfixVersion>
+	  <CoreEntitiesBugfixVersion>3</CoreEntitiesBugfixVersion>
 	  <CoreExceptionHanldersBugfixVersion>2</CoreExceptionHanldersBugfixVersion>
 
 	  
