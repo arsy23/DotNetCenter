@@ -27,7 +27,7 @@
         /// <summary>
         /// Entity Identity (ID)
         /// </summary>
-        public TKey Id => _id;
+        public virtual TKey Id => _id;
         private readonly TKey _id;
         #endregion
 
@@ -35,7 +35,7 @@
         /// <summary>
         /// The Name of Identity (ID) Property
         /// </summary>
-        public const string ID = nameof(Id);
+        public  const string ID = nameof(Id);
         #endregion
 
         #region Methods
@@ -91,7 +91,7 @@
         /// </summary>
         /// <param name="target">The Target object recived value from this object presented as reference parameter</param>
         /// <returns></returns>
-        protected ref TEntity CopyValues(ref TEntity target)
+        protected virtual ref TEntity CopyValues(ref TEntity target)
         {
             var properties = GetType()
                 .GetProperties()
