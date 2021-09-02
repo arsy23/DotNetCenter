@@ -8,21 +8,16 @@
     /// </summary>
     /// <typeparam name="TKeyModifier">The Entity Modifier Key-Type</typeparam>
     public interface ModifiableEntity<TKeyModifier>
+        where TKeyModifier : struct
     {
-        /// <summary>
-        /// Register Modified State Informations
-        /// </summary>
-        /// <param name="modifierId"></param>
-        /// <param name="modifiedDateTime"></param>
-        public void RegisterModifiedInformation(TKeyModifier modifierId, DateTime modifiedDateTime);
         /// <summary>
         /// Entity Modifier identity (ID)
         /// </summary>
-        public TKeyModifier ModifiedBy { get; }
+        public TKeyModifier? ModifiedBy { get; set; }
 
         /// <summary>
         /// Last Date-Time that Entity it was modified
         /// </summary>
-        public DateTime? ModifiedDateTime { get; }
+        public DateTime? ModifiedDateTime { get; set; }
     }
 }

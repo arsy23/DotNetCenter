@@ -8,8 +8,8 @@ namespace DotNetCenter.Core.Entities
     /// <typeparam name="TKeyUser">The IdentityUser Entity Key-Type</typeparam>
     public interface AuditableEntity<TKey, TKeyUser> 
         : Entity<TKey>, ModifiableEntity<TKeyUser>, CreatableEntity<TKeyUser>
-        where TKey :  IEquatable<TKey>
-        where TKeyUser :  IEquatable<TKeyUser>
+        where TKey : struct, IEquatable<TKey>
+        where TKeyUser : struct, IEquatable<TKeyUser>
     {
         #region Properties
         #endregion

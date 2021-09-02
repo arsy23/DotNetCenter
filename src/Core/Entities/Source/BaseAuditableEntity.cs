@@ -1,5 +1,6 @@
 ﻿namespace DotNetCenter.Core.Entities
 {
+    
     using System;
     /// <summary>
     /// Abstract Base class for Auditable Entity
@@ -22,33 +23,29 @@
         /// <param name="creatorId">Creator identity (ID)</param>
         public BaseAuditableEntity(TKey id, TKeyUser creatorId)
            : base(id)
-           => _creatorId = creatorId;
+           => CreatedBy = creatorId;
         #endregion
 
         #region Properties
         /// <summary>
         /// The DateTime that Entity it was Created
         /// </summary>
-        public TKeyUser CreatedBy => _creatorId;
-        private TKeyUser _creatorId;
+        public TKeyUser CreatedBy { get; set; }
 
         /// <summary>
         /// Initial Date-Time that Entity it was Created
         ///</summary>
-        public DateTime CreatedDateTime => _createdDateTime;
-        private DateTime _createdDateTime;
+        public DateTime CreatedDateTime { get; set; }
 
         /// <summary>
         /// Last Modifier identity (ID)
         /// </summary>
-        public TKeyUser ModifiedBy => _lastModifiedBy;
-        private TKeyUser _lastModifiedBy;
+        public TKeyUser? ModifiedBy { get; set; }
 
         /// <summary>
         /// Last Date-Time that Entity it was modified
         /// </summary>
-        public DateTime? ModifiedDateTime => _lastModifiedDateTime;
-        private DateTime? _lastModifiedDateTime;
+        public DateTime? ModifiedDateTime { get; set; }
         #endregion
 
         #region Methods
@@ -60,9 +57,11 @@
         /// <param name="modifiedDateTime">Modified DateTime</param>
         public void RegisterModifiedInformation(TKeyUser modifierId, DateTime modifiedDateTime)
         {
-            _lastModifiedBy = modifierId;
-            _lastModifiedDateTime = modifiedDateTime;
+            ModifiedBy = modifierId;
+            ModifiedDateTime = modifiedDateTime;
         }
         #endregion
+
+
     }
 }
